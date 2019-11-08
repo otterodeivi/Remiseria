@@ -1,0 +1,192 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+FastCheck
+</name>
+</assembly>
+<members>
+<member name="T:FastCheck.remiseriaDataSet.choferDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.liqCtaCteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.resumenRemiseriaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.sociosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.turnosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.valoresDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.vehiculoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.viajesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.choferRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.liqCtaCteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.resumenRemiseriaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.sociosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.turnosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.valoresRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.vehiculoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.viajesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.choferRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.liqCtaCteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.resumenRemiseriaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.sociosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.turnosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.valoresRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.vehiculoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.viajesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.choferTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.liqCtaCteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.resumenRemiseriaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.sociosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.turnosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.valoresTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.vehiculoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.viajesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.QueriesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(FastCheck.remiseriaDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(FastCheck.remiseriaDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(FastCheck.remiseriaDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager.UpdateAll(FastCheck.remiseriaDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:FastCheck.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:FastCheck.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:FastCheck.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

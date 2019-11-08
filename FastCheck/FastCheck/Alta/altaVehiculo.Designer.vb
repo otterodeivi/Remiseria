@@ -22,27 +22,124 @@ Partial Class altaVehiculo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim DuenioLabel As System.Windows.Forms.Label
+        Dim ModeloLabel As System.Windows.Forms.Label
+        Dim MarcaLabel As System.Windows.Forms.Label
+        Dim ColorLabel As System.Windows.Forms.Label
+        Dim AnioLabel As System.Windows.Forms.Label
+        Dim DominioLabel As System.Windows.Forms.Label
+        Dim SeguroLabel As System.Windows.Forms.Label
+        Dim Venc_gncLabel As System.Windows.Forms.Label
+        Dim Venc_vtvLabel As System.Windows.Forms.Label
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.RemiseriaDataSet = New FastCheck.remiseriaDataSet()
+        Me.VehiculoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VehiculoTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.vehiculoTableAdapter()
+        Me.TableAdapterManager = New FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager()
+        Me.DuenioTextBox = New System.Windows.Forms.TextBox()
+        Me.ModeloTextBox = New System.Windows.Forms.TextBox()
+        Me.MarcaTextBox = New System.Windows.Forms.TextBox()
+        Me.ColorTextBox = New System.Windows.Forms.TextBox()
+        Me.AnioDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.DominioTextBox = New System.Windows.Forms.TextBox()
+        Me.SeguroTextBox = New System.Windows.Forms.TextBox()
+        Me.Venc_gncDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.Venc_vtvDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        DuenioLabel = New System.Windows.Forms.Label()
+        ModeloLabel = New System.Windows.Forms.Label()
+        MarcaLabel = New System.Windows.Forms.Label()
+        ColorLabel = New System.Windows.Forms.Label()
+        AnioLabel = New System.Windows.Forms.Label()
+        DominioLabel = New System.Windows.Forms.Label()
+        SeguroLabel = New System.Windows.Forms.Label()
+        Venc_gncLabel = New System.Windows.Forms.Label()
+        Venc_vtvLabel = New System.Windows.Forms.Label()
+        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VehiculoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'DuenioLabel
+        '
+        DuenioLabel.AutoSize = True
+        DuenioLabel.Location = New System.Drawing.Point(72, 85)
+        DuenioLabel.Name = "DuenioLabel"
+        DuenioLabel.Size = New System.Drawing.Size(42, 13)
+        DuenioLabel.TabIndex = 5
+        DuenioLabel.Text = "duenio:"
+        '
+        'ModeloLabel
+        '
+        ModeloLabel.AutoSize = True
+        ModeloLabel.Location = New System.Drawing.Point(72, 111)
+        ModeloLabel.Name = "ModeloLabel"
+        ModeloLabel.Size = New System.Drawing.Size(44, 13)
+        ModeloLabel.TabIndex = 7
+        ModeloLabel.Text = "modelo:"
+        '
+        'MarcaLabel
+        '
+        MarcaLabel.AutoSize = True
+        MarcaLabel.Location = New System.Drawing.Point(72, 137)
+        MarcaLabel.Name = "MarcaLabel"
+        MarcaLabel.Size = New System.Drawing.Size(39, 13)
+        MarcaLabel.TabIndex = 9
+        MarcaLabel.Text = "marca:"
+        '
+        'ColorLabel
+        '
+        ColorLabel.AutoSize = True
+        ColorLabel.Location = New System.Drawing.Point(72, 163)
+        ColorLabel.Name = "ColorLabel"
+        ColorLabel.Size = New System.Drawing.Size(33, 13)
+        ColorLabel.TabIndex = 11
+        ColorLabel.Text = "color:"
+        '
+        'AnioLabel
+        '
+        AnioLabel.AutoSize = True
+        AnioLabel.Location = New System.Drawing.Point(72, 190)
+        AnioLabel.Name = "AnioLabel"
+        AnioLabel.Size = New System.Drawing.Size(30, 13)
+        AnioLabel.TabIndex = 13
+        AnioLabel.Text = "anio:"
+        '
+        'DominioLabel
+        '
+        DominioLabel.AutoSize = True
+        DominioLabel.Location = New System.Drawing.Point(72, 215)
+        DominioLabel.Name = "DominioLabel"
+        DominioLabel.Size = New System.Drawing.Size(46, 13)
+        DominioLabel.TabIndex = 15
+        DominioLabel.Text = "dominio:"
+        '
+        'SeguroLabel
+        '
+        SeguroLabel.AutoSize = True
+        SeguroLabel.Location = New System.Drawing.Point(72, 241)
+        SeguroLabel.Name = "SeguroLabel"
+        SeguroLabel.Size = New System.Drawing.Size(42, 13)
+        SeguroLabel.TabIndex = 17
+        SeguroLabel.Text = "seguro:"
+        '
+        'Venc_gncLabel
+        '
+        Venc_gncLabel.AutoSize = True
+        Venc_gncLabel.Location = New System.Drawing.Point(72, 268)
+        Venc_gncLabel.Name = "Venc_gncLabel"
+        Venc_gncLabel.Size = New System.Drawing.Size(55, 13)
+        Venc_gncLabel.TabIndex = 19
+        Venc_gncLabel.Text = "venc gnc:"
+        '
+        'Venc_vtvLabel
+        '
+        Venc_vtvLabel.AutoSize = True
+        Venc_vtvLabel.Location = New System.Drawing.Point(72, 294)
+        Venc_vtvLabel.Name = "Venc_vtvLabel"
+        Venc_vtvLabel.Size = New System.Drawing.Size(52, 13)
+        Venc_vtvLabel.TabIndex = 21
+        Venc_vtvLabel.Text = "venc vtv:"
         '
         'Button1
         '
@@ -62,201 +159,154 @@ Partial Class altaVehiculo
         Me.Button2.Text = "VOLVER"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'RemiseriaDataSet
         '
-        Me.TextBox1.Location = New System.Drawing.Point(121, 70)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.RemiseriaDataSet.DataSetName = "remiseriaDataSet"
+        Me.RemiseriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'TextBox2
+        'VehiculoBindingSource
         '
-        Me.TextBox2.Location = New System.Drawing.Point(121, 106)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 3
+        Me.VehiculoBindingSource.DataMember = "vehiculo"
+        Me.VehiculoBindingSource.DataSource = Me.RemiseriaDataSet
         '
-        'TextBox3
+        'VehiculoTableAdapter
         '
-        Me.TextBox3.Location = New System.Drawing.Point(121, 148)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 4
+        Me.VehiculoTableAdapter.ClearBeforeFill = True
         '
-        'TextBox4
+        'TableAdapterManager
         '
-        Me.TextBox4.Location = New System.Drawing.Point(121, 185)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 5
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.choferTableAdapter = Nothing
+        Me.TableAdapterManager.liqCtaCteTableAdapter = Nothing
+        Me.TableAdapterManager.resumenRemiseriaTableAdapter = Nothing
+        Me.TableAdapterManager.sociosTableAdapter = Nothing
+        Me.TableAdapterManager.turnosTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.valoresTableAdapter = Nothing
+        Me.TableAdapterManager.vehiculoTableAdapter = Me.VehiculoTableAdapter
+        Me.TableAdapterManager.viajesTableAdapter = Nothing
         '
-        'TextBox5
+        'DuenioTextBox
         '
-        Me.TextBox5.Location = New System.Drawing.Point(121, 261)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox5.TabIndex = 6
+        Me.DuenioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "duenio", True))
+        Me.DuenioTextBox.Location = New System.Drawing.Point(140, 82)
+        Me.DuenioTextBox.Name = "DuenioTextBox"
+        Me.DuenioTextBox.Size = New System.Drawing.Size(117, 20)
+        Me.DuenioTextBox.TabIndex = 6
         '
-        'TextBox6
+        'ModeloTextBox
         '
-        Me.TextBox6.Location = New System.Drawing.Point(121, 223)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox6.TabIndex = 7
+        Me.ModeloTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "modelo", True))
+        Me.ModeloTextBox.Location = New System.Drawing.Point(140, 108)
+        Me.ModeloTextBox.Name = "ModeloTextBox"
+        Me.ModeloTextBox.Size = New System.Drawing.Size(117, 20)
+        Me.ModeloTextBox.TabIndex = 8
         '
-        'TextBox7
+        'MarcaTextBox
         '
-        Me.TextBox7.Location = New System.Drawing.Point(121, 30)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox7.TabIndex = 8
+        Me.MarcaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "marca", True))
+        Me.MarcaTextBox.Location = New System.Drawing.Point(140, 134)
+        Me.MarcaTextBox.Name = "MarcaTextBox"
+        Me.MarcaTextBox.Size = New System.Drawing.Size(117, 20)
+        Me.MarcaTextBox.TabIndex = 10
         '
-        'Label1
+        'ColorTextBox
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(29, 33)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Dueño"
+        Me.ColorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "color", True))
+        Me.ColorTextBox.Location = New System.Drawing.Point(140, 160)
+        Me.ColorTextBox.Name = "ColorTextBox"
+        Me.ColorTextBox.Size = New System.Drawing.Size(117, 20)
+        Me.ColorTextBox.TabIndex = 12
         '
-        'Label2
+        'AnioDateTimePicker
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(29, 73)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(42, 13)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Modelo"
+        Me.AnioDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.VehiculoBindingSource, "anio", True))
+        Me.AnioDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.AnioDateTimePicker.Location = New System.Drawing.Point(140, 186)
+        Me.AnioDateTimePicker.Name = "AnioDateTimePicker"
+        Me.AnioDateTimePicker.Size = New System.Drawing.Size(117, 20)
+        Me.AnioDateTimePicker.TabIndex = 14
         '
-        'Label3
+        'DominioTextBox
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(29, 109)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(37, 13)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Marca"
+        Me.DominioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "dominio", True))
+        Me.DominioTextBox.Location = New System.Drawing.Point(140, 212)
+        Me.DominioTextBox.Name = "DominioTextBox"
+        Me.DominioTextBox.Size = New System.Drawing.Size(117, 20)
+        Me.DominioTextBox.TabIndex = 16
         '
-        'Label4
+        'SeguroTextBox
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(29, 151)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(31, 13)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Color"
+        Me.SeguroTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "seguro", True))
+        Me.SeguroTextBox.Location = New System.Drawing.Point(140, 238)
+        Me.SeguroTextBox.Name = "SeguroTextBox"
+        Me.SeguroTextBox.Size = New System.Drawing.Size(117, 20)
+        Me.SeguroTextBox.TabIndex = 18
         '
-        'Label5
+        'Venc_gncDateTimePicker
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(29, 188)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(26, 13)
-        Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Año"
+        Me.Venc_gncDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.VehiculoBindingSource, "venc_gnc", True))
+        Me.Venc_gncDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Venc_gncDateTimePicker.Location = New System.Drawing.Point(140, 264)
+        Me.Venc_gncDateTimePicker.Name = "Venc_gncDateTimePicker"
+        Me.Venc_gncDateTimePicker.Size = New System.Drawing.Size(117, 20)
+        Me.Venc_gncDateTimePicker.TabIndex = 20
         '
-        'Label6
+        'Venc_vtvDateTimePicker
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(29, 226)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(45, 13)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Dominio"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(29, 268)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(41, 13)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "Seguro"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(29, 347)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(50, 13)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "Venc vtv"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(29, 313)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(53, 13)
-        Me.Label9.TabIndex = 17
-        Me.Label9.Text = "Venc gnc"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(120, 306)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(101, 20)
-        Me.DateTimePicker1.TabIndex = 18
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(120, 341)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(101, 20)
-        Me.DateTimePicker2.TabIndex = 19
+        Me.Venc_vtvDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.VehiculoBindingSource, "venc_vtv", True))
+        Me.Venc_vtvDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Venc_vtvDateTimePicker.Location = New System.Drawing.Point(140, 290)
+        Me.Venc_vtvDateTimePicker.Name = "Venc_vtvDateTimePicker"
+        Me.Venc_vtvDateTimePicker.Size = New System.Drawing.Size(117, 20)
+        Me.Venc_vtvDateTimePicker.TabIndex = 22
         '
         'altaVehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(332, 434)
-        Me.Controls.Add(Me.DateTimePicker2)
-        Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(407, 434)
+        Me.Controls.Add(DuenioLabel)
+        Me.Controls.Add(Me.DuenioTextBox)
+        Me.Controls.Add(ModeloLabel)
+        Me.Controls.Add(Me.ModeloTextBox)
+        Me.Controls.Add(MarcaLabel)
+        Me.Controls.Add(Me.MarcaTextBox)
+        Me.Controls.Add(ColorLabel)
+        Me.Controls.Add(Me.ColorTextBox)
+        Me.Controls.Add(AnioLabel)
+        Me.Controls.Add(Me.AnioDateTimePicker)
+        Me.Controls.Add(DominioLabel)
+        Me.Controls.Add(Me.DominioTextBox)
+        Me.Controls.Add(SeguroLabel)
+        Me.Controls.Add(Me.SeguroTextBox)
+        Me.Controls.Add(Venc_gncLabel)
+        Me.Controls.Add(Me.Venc_gncDateTimePicker)
+        Me.Controls.Add(Venc_vtvLabel)
+        Me.Controls.Add(Me.Venc_vtvDateTimePicker)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Name = "altaVehiculo"
         Me.Text = "altaVehiculo"
+        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VehiculoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents RemiseriaDataSet As FastCheck.remiseriaDataSet
+    Friend WithEvents VehiculoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents VehiculoTableAdapter As FastCheck.remiseriaDataSetTableAdapters.vehiculoTableAdapter
+    Friend WithEvents TableAdapterManager As FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents DuenioTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ModeloTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents MarcaTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ColorTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents AnioDateTimePicker As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DominioTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents SeguroTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Venc_gncDateTimePicker As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Venc_vtvDateTimePicker As System.Windows.Forms.DateTimePicker
 End Class

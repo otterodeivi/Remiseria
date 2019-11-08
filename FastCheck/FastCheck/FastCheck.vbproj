@@ -78,6 +78,12 @@
     <Compile Include="Alta\altaVehiculo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Alta\altaChofer.Designer.vb">
+      <DependentUpon>altaChofer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta\altaChofer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -101,10 +107,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="remiseriaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>remiseriaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="remiseriaDataSet.vb">
+      <DependentUpon>remiseriaDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Alta\altaVehiculo.resx">
       <DependentUpon>altaVehiculo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alta\altaChofer.resx">
+      <DependentUpon>altaChofer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -117,6 +134,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -125,6 +143,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="remiseriaDataSet.xsc">
+      <DependentUpon>remiseriaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="remiseriaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>remiseriaDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="remiseriaDataSet.xss">
+      <DependentUpon>remiseriaDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
