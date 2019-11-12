@@ -21,3 +21,5 @@ C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.Resou
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.vbproj.GenerateResource.Cache
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.exe
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.altaChofer.resources
+C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.altaSocio.resources
+C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.EliminarChofer.resources

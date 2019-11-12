@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class altaChofer
+Partial Class EliminarChofer
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -28,32 +28,31 @@ Partial Class altaChofer
         Dim DniLabel As System.Windows.Forms.Label
         Dim DireccionLabel As System.Windows.Forms.Label
         Dim TelefonoLabel As System.Windows.Forms.Label
-        Me.NombreTextBox = New System.Windows.Forms.TextBox()
-        Me.ChoferBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RemiseriaDataSet = New FastCheck.remiseriaDataSet()
+        Me.ChoferBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ChoferTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.choferTableAdapter()
+        Me.TableAdapterManager = New FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager()
+        Me.NombreTextBox = New System.Windows.Forms.TextBox()
         Me.ApellidoTextBox = New System.Windows.Forms.TextBox()
         Me.DniTextBox = New System.Windows.Forms.TextBox()
         Me.DireccionTextBox = New System.Windows.Forms.TextBox()
         Me.TelefonoTextBox = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ChoferTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.choferTableAdapter()
-        Me.TableAdapterManager = New FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         ApellidoLabel = New System.Windows.Forms.Label()
         DniLabel = New System.Windows.Forms.Label()
         DireccionLabel = New System.Windows.Forms.Label()
         TelefonoLabel = New System.Windows.Forms.Label()
-        CType(Me.ChoferBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChoferBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NombreLabel
         '
         NombreLabel.AutoSize = True
-        NombreLabel.Location = New System.Drawing.Point(83, 41)
+        NombreLabel.Location = New System.Drawing.Point(171, 155)
         NombreLabel.Name = "NombreLabel"
         NombreLabel.Size = New System.Drawing.Size(45, 13)
         NombreLabel.TabIndex = 3
@@ -62,7 +61,7 @@ Partial Class altaChofer
         'ApellidoLabel
         '
         ApellidoLabel.AutoSize = True
-        ApellidoLabel.Location = New System.Drawing.Point(83, 67)
+        ApellidoLabel.Location = New System.Drawing.Point(171, 193)
         ApellidoLabel.Name = "ApellidoLabel"
         ApellidoLabel.Size = New System.Drawing.Size(46, 13)
         ApellidoLabel.TabIndex = 5
@@ -71,16 +70,16 @@ Partial Class altaChofer
         'DniLabel
         '
         DniLabel.AutoSize = True
-        DniLabel.Location = New System.Drawing.Point(96, 93)
+        DniLabel.Location = New System.Drawing.Point(171, 120)
         DniLabel.Name = "DniLabel"
-        DniLabel.Size = New System.Drawing.Size(24, 13)
+        DniLabel.Size = New System.Drawing.Size(29, 13)
         DniLabel.TabIndex = 7
-        DniLabel.Text = "dni:"
+        DniLabel.Text = "DNI:"
         '
         'DireccionLabel
         '
         DireccionLabel.AutoSize = True
-        DireccionLabel.Location = New System.Drawing.Point(83, 119)
+        DireccionLabel.Location = New System.Drawing.Point(171, 236)
         DireccionLabel.Name = "DireccionLabel"
         DireccionLabel.Size = New System.Drawing.Size(53, 13)
         DireccionLabel.TabIndex = 9
@@ -89,70 +88,21 @@ Partial Class altaChofer
         'TelefonoLabel
         '
         TelefonoLabel.AutoSize = True
-        TelefonoLabel.Location = New System.Drawing.Point(83, 145)
+        TelefonoLabel.Location = New System.Drawing.Point(171, 272)
         TelefonoLabel.Name = "TelefonoLabel"
         TelefonoLabel.Size = New System.Drawing.Size(48, 13)
         TelefonoLabel.TabIndex = 11
         TelefonoLabel.Text = "telefono:"
-        '
-        'NombreTextBox
-        '
-        Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "nombre", True))
-        Me.NombreTextBox.Location = New System.Drawing.Point(142, 38)
-        Me.NombreTextBox.Name = "NombreTextBox"
-        Me.NombreTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.NombreTextBox.TabIndex = 4
-        '
-        'ChoferBindingSource
-        '
-        Me.ChoferBindingSource.DataMember = "chofer"
-        Me.ChoferBindingSource.DataSource = Me.RemiseriaDataSet
         '
         'RemiseriaDataSet
         '
         Me.RemiseriaDataSet.DataSetName = "remiseriaDataSet"
         Me.RemiseriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'ApellidoTextBox
+        'ChoferBindingSource
         '
-        Me.ApellidoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "apellido", True))
-        Me.ApellidoTextBox.Location = New System.Drawing.Point(142, 64)
-        Me.ApellidoTextBox.Name = "ApellidoTextBox"
-        Me.ApellidoTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.ApellidoTextBox.TabIndex = 6
-        '
-        'DniTextBox
-        '
-        Me.DniTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "dni", True))
-        Me.DniTextBox.Location = New System.Drawing.Point(142, 90)
-        Me.DniTextBox.Name = "DniTextBox"
-        Me.DniTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.DniTextBox.TabIndex = 8
-        '
-        'DireccionTextBox
-        '
-        Me.DireccionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "direccion", True))
-        Me.DireccionTextBox.Location = New System.Drawing.Point(142, 116)
-        Me.DireccionTextBox.Name = "DireccionTextBox"
-        Me.DireccionTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.DireccionTextBox.TabIndex = 10
-        '
-        'TelefonoTextBox
-        '
-        Me.TelefonoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "telefono", True))
-        Me.TelefonoTextBox.Location = New System.Drawing.Point(142, 142)
-        Me.TelefonoTextBox.Name = "TelefonoTextBox"
-        Me.TelefonoTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.TelefonoTextBox.TabIndex = 12
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(45, 206)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "CREAR"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ChoferBindingSource.DataMember = "chofer"
+        Me.ChoferBindingSource.DataSource = Me.RemiseriaDataSet
         '
         'ChoferTableAdapter
         '
@@ -171,42 +121,79 @@ Partial Class altaChofer
         Me.TableAdapterManager.vehiculoTableAdapter = Nothing
         Me.TableAdapterManager.viajesTableAdapter = Nothing
         '
-        'Label1
+        'NombreTextBox
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(248, 145)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(111, 13)
-        Me.Label1.TabIndex = 14
-        Me.Label1.Text = "Escribalo sin espacios"
+        Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "nombre", True))
+        Me.NombreTextBox.Location = New System.Drawing.Point(268, 155)
+        Me.NombreTextBox.Name = "NombreTextBox"
+        Me.NombreTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.NombreTextBox.TabIndex = 4
+        '
+        'ApellidoTextBox
+        '
+        Me.ApellidoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "apellido", True))
+        Me.ApellidoTextBox.Location = New System.Drawing.Point(268, 193)
+        Me.ApellidoTextBox.Name = "ApellidoTextBox"
+        Me.ApellidoTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.ApellidoTextBox.TabIndex = 6
+        '
+        'DniTextBox
+        '
+        Me.DniTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "dni", True))
+        Me.DniTextBox.Location = New System.Drawing.Point(268, 117)
+        Me.DniTextBox.Name = "DniTextBox"
+        Me.DniTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.DniTextBox.TabIndex = 8
+        '
+        'DireccionTextBox
+        '
+        Me.DireccionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "direccion", True))
+        Me.DireccionTextBox.Location = New System.Drawing.Point(268, 236)
+        Me.DireccionTextBox.Name = "DireccionTextBox"
+        Me.DireccionTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.DireccionTextBox.TabIndex = 10
+        '
+        'TelefonoTextBox
+        '
+        Me.TelefonoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "telefono", True))
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(268, 272)
+        Me.TelefonoTextBox.Name = "TelefonoTextBox"
+        Me.TelefonoTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.TelefonoTextBox.TabIndex = 12
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(284, 206)
+        Me.Button2.Location = New System.Drawing.Point(293, 322)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 15
-        Me.Button2.Text = "VOLVER"
+        Me.Button2.Size = New System.Drawing.Size(75, 52)
+        Me.Button2.TabIndex = 14
+        Me.Button2.Text = "ELIMINAR"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button3
+        'TextBox1
         '
-        Me.Button3.Location = New System.Drawing.Point(158, 206)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 16
-        Me.Button3.Text = "ELIMINAR"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.TextBox1.Location = New System.Drawing.Point(268, 82)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 15
         '
-        'altaChofer
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(171, 85)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(68, 13)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "ID del chofer"
+        '
+        'EliminarChofer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(388, 280)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.ClientSize = New System.Drawing.Size(569, 445)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(NombreLabel)
         Me.Controls.Add(Me.NombreTextBox)
         Me.Controls.Add(ApellidoLabel)
@@ -217,10 +204,10 @@ Partial Class altaChofer
         Me.Controls.Add(Me.DireccionTextBox)
         Me.Controls.Add(TelefonoLabel)
         Me.Controls.Add(Me.TelefonoTextBox)
-        Me.Name = "altaChofer"
-        Me.Text = "choferAlta"
-        CType(Me.ChoferBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "EliminarChofer"
+        Me.Text = "bajaChofer"
         CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChoferBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -234,8 +221,7 @@ Partial Class altaChofer
     Friend WithEvents DniTextBox As System.Windows.Forms.TextBox
     Friend WithEvents DireccionTextBox As System.Windows.Forms.TextBox
     Friend WithEvents TelefonoTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

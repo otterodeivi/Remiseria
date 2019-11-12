@@ -1,8 +1,4 @@
-﻿'Imports System.Data
-'Imports System.Data.Sql
-'Imports System.Data.SqlClient
-
-
+﻿
 Public Class altaChofer
 
     Private Sub ChoferBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -20,10 +16,6 @@ Public Class altaChofer
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
 
-        'Me.ChoferTableAdapter.altaChofer(NombreTextBox.Text, ApellidoTextBox.Text, DateValue(DniTextBox.Text), DireccionTextBox.Text, DateValue(TelefonoTextBox.Text))
-
-        'MsgBox("guardado con exito")
-
         If NombreTextBox.Text = "" Then
             NombreTextBox.Focus()
             MsgBox("El campo nombre esta vacio")
@@ -36,5 +28,13 @@ Public Class altaChofer
             NombreTextBox.Focus()
             Me.ChoferBindingSource.AddNew()
         End If
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+
     End Sub
 End Class

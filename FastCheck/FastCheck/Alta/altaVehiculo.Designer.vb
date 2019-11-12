@@ -34,10 +34,6 @@ Partial Class altaVehiculo
         Dim Venc_vtvLabel As System.Windows.Forms.Label
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.RemiseriaDataSet = New FastCheck.remiseriaDataSet()
-        Me.VehiculoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VehiculoTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.vehiculoTableAdapter()
-        Me.TableAdapterManager = New FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager()
         Me.DuenioTextBox = New System.Windows.Forms.TextBox()
         Me.ModeloTextBox = New System.Windows.Forms.TextBox()
         Me.MarcaTextBox = New System.Windows.Forms.TextBox()
@@ -47,6 +43,10 @@ Partial Class altaVehiculo
         Me.SeguroTextBox = New System.Windows.Forms.TextBox()
         Me.Venc_gncDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Venc_vtvDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.VehiculoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RemiseriaDataSet = New FastCheck.remiseriaDataSet()
+        Me.VehiculoTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.vehiculoTableAdapter()
+        Me.TableAdapterManager = New FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager()
         DuenioLabel = New System.Windows.Forms.Label()
         ModeloLabel = New System.Windows.Forms.Label()
         MarcaLabel = New System.Windows.Forms.Label()
@@ -56,8 +56,8 @@ Partial Class altaVehiculo
         SeguroLabel = New System.Windows.Forms.Label()
         Venc_gncLabel = New System.Windows.Forms.Label()
         Venc_vtvLabel = New System.Windows.Forms.Label()
-        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VehiculoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DuenioLabel
@@ -65,9 +65,9 @@ Partial Class altaVehiculo
         DuenioLabel.AutoSize = True
         DuenioLabel.Location = New System.Drawing.Point(72, 85)
         DuenioLabel.Name = "DuenioLabel"
-        DuenioLabel.Size = New System.Drawing.Size(42, 13)
+        DuenioLabel.Size = New System.Drawing.Size(40, 13)
         DuenioLabel.TabIndex = 5
-        DuenioLabel.Text = "duenio:"
+        DuenioLabel.Text = "dueño:"
         '
         'ModeloLabel
         '
@@ -101,9 +101,9 @@ Partial Class altaVehiculo
         AnioLabel.AutoSize = True
         AnioLabel.Location = New System.Drawing.Point(72, 190)
         AnioLabel.Name = "AnioLabel"
-        AnioLabel.Size = New System.Drawing.Size(30, 13)
+        AnioLabel.Size = New System.Drawing.Size(28, 13)
         AnioLabel.TabIndex = 13
-        AnioLabel.Text = "anio:"
+        AnioLabel.Text = "año:"
         '
         'DominioLabel
         '
@@ -158,33 +158,6 @@ Partial Class altaVehiculo
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "VOLVER"
         Me.Button2.UseVisualStyleBackColor = True
-        '
-        'RemiseriaDataSet
-        '
-        Me.RemiseriaDataSet.DataSetName = "remiseriaDataSet"
-        Me.RemiseriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'VehiculoBindingSource
-        '
-        Me.VehiculoBindingSource.DataMember = "vehiculo"
-        Me.VehiculoBindingSource.DataSource = Me.RemiseriaDataSet
-        '
-        'VehiculoTableAdapter
-        '
-        Me.VehiculoTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.choferTableAdapter = Nothing
-        Me.TableAdapterManager.liqCtaCteTableAdapter = Nothing
-        Me.TableAdapterManager.resumenRemiseriaTableAdapter = Nothing
-        Me.TableAdapterManager.sociosTableAdapter = Nothing
-        Me.TableAdapterManager.turnosTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.valoresTableAdapter = Nothing
-        Me.TableAdapterManager.vehiculoTableAdapter = Me.VehiculoTableAdapter
-        Me.TableAdapterManager.viajesTableAdapter = Nothing
         '
         'DuenioTextBox
         '
@@ -261,6 +234,33 @@ Partial Class altaVehiculo
         Me.Venc_vtvDateTimePicker.Size = New System.Drawing.Size(117, 20)
         Me.Venc_vtvDateTimePicker.TabIndex = 22
         '
+        'VehiculoBindingSource
+        '
+        Me.VehiculoBindingSource.DataMember = "vehiculo"
+        Me.VehiculoBindingSource.DataSource = Me.RemiseriaDataSet
+        '
+        'RemiseriaDataSet
+        '
+        Me.RemiseriaDataSet.DataSetName = "remiseriaDataSet"
+        Me.RemiseriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'VehiculoTableAdapter
+        '
+        Me.VehiculoTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.choferTableAdapter = Nothing
+        Me.TableAdapterManager.liqCtaCteTableAdapter = Nothing
+        Me.TableAdapterManager.resumenRemiseriaTableAdapter = Nothing
+        Me.TableAdapterManager.sociosTableAdapter = Nothing
+        Me.TableAdapterManager.turnosTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.valoresTableAdapter = Nothing
+        Me.TableAdapterManager.vehiculoTableAdapter = Me.VehiculoTableAdapter
+        Me.TableAdapterManager.viajesTableAdapter = Nothing
+        '
         'altaVehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -288,8 +288,8 @@ Partial Class altaVehiculo
         Me.Controls.Add(Me.Button1)
         Me.Name = "altaVehiculo"
         Me.Text = "altaVehiculo"
-        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VehiculoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

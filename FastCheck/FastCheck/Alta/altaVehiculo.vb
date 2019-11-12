@@ -15,18 +15,26 @@ Public Class altaVehiculo
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim anio, gnc, vtv As Date
+        anio = AnioDateTimePicker.Value.Date
+        gnc = Venc_gncDateTimePicker.Value.Date
+        vtv = Venc_gncDateTimePicker.Value.Date
 
-      
-        Me.VehiculoTableAdapter.altaVehiculo(DuenioTextBox.Text, ModeloTextBox.Text, MarcaTextBox.Text, ColorTextBox.Text, AnioDateTimePicker.Value.Date, DominioTextBox.Text, SeguroTextBox.Text, Venc_gncDateTimePicker.Value.Date, Venc_vtvDateTimePicker.Value.Date)
-
-        MsgBox("guardado con exito")
-
-
-       
-    
-
-
-
+        If DuenioTextBox.Text = "" Then
+            DuenioTextBox.Focus()
+            MsgBox("El campo nombre esta vacio")
+        Else
+            Me.VehiculoBindingSource.EndEdit()
+            Me.VehiculoBindingSource.Current("anio") = anio
+            Me.VehiculoBindingSource.Current("venc_gnc") = gnc
+            Me.VehiculoBindingSource.Current("venc_vtv") = vtv
+            Me.TableAdapterManager.UpdateAll(Me.RemiseriaDataSet)
+            Me.VehiculoTableAdapter.Fill(Me.RemiseriaDataSet.vehiculo)
+            Me.VehiculoBindingSource.MoveLast()
+            MsgBox("codigo de vehiculo es:" & VehiculoBindingSource.Current("idVehiculo"))
+            DuenioTextBox.Focus()
+            Me.VehiculoBindingSource.AddNew()
+        End If
 
     End Sub
 
