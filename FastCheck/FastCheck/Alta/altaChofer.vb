@@ -35,6 +35,20 @@ Public Class altaChofer
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-
+        Dim fila, CodConsulta, aux As Integer
+        CodConsulta = InputBox("Ingrese el numero de chofer que desea eliminar")
+        fila = Me.ChoferBindingSource.Find("idChofer", CodConsulta)
+        If fila = -1 Then
+            MsgBox("El chofer no existe, jamas existio o fue eliminaro el...")
+        Else
+            ChoferBindingSource.Position = fila
+            aux = MsgBox("quiere eliminar el chofer: Y SUS DATOS" & CodConsulta, 32 + 1, "eliminar")
+            If aux = 1 Then
+                Me.ChoferBindingSource.RemoveCurrent()
+                Me.ChoferBindingSource.EndEdit()
+                Me.TableAdapterManager.UpdateAll(Me.RemiseriaDataSet)
+                MsgBox("el chofer fue eliminado con exito")
+            End If
+        End If
     End Sub
 End Class
