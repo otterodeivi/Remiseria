@@ -42,7 +42,7 @@ Public Class altaChofer
             MsgBox("El chofer no existe, jamas existio o fue eliminaro el...")
         Else
             ChoferBindingSource.Position = fila
-            aux = MsgBox("quiere eliminar el chofer: Y SUS DATOS" & CodConsulta, 32 + 1, "eliminar")
+            aux = MsgBox("quiere eliminar el chofer: " & CodConsulta, 32 + 1, "eliminar")
             If aux = 1 Then
                 Me.ChoferBindingSource.RemoveCurrent()
                 Me.ChoferBindingSource.EndEdit()
@@ -50,5 +50,9 @@ Public Class altaChofer
                 MsgBox("el chofer fue eliminado con exito")
             End If
         End If
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        modificarChofer.Show()
     End Sub
 End Class

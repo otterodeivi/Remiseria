@@ -32,4 +32,26 @@
             Me.SociosBindingSource.AddNew()
         End If
     End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Dim fila, CodConsulta, aux As Integer
+        CodConsulta = InputBox("Ingrese el numero del socio que desea eliminar")
+        fila = Me.SociosBindingSource.Find("idSocio", CodConsulta)
+        If fila = -1 Then
+            MsgBox("El chofer no existe, jamas existio o fue eliminaro el...")
+        Else
+            SociosBindingSource.Position = fila
+            aux = MsgBox("quiere eliminar el Socio: Y SUS DATOS" & CodConsulta, 32 + 1, "eliminar")
+            If aux = 1 Then
+                Me.SociosBindingSource.RemoveCurrent()
+                Me.SociosBindingSource.EndEdit()
+                Me.TableAdapterManager.UpdateAll(Me.RemiseriaDataSet)
+                MsgBox("el vehiculo fue eliminado con exito")
+            End If
+        End If
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        modificarSocio.Show()
+    End Sub
 End Class

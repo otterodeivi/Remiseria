@@ -90,6 +90,24 @@
     <Compile Include="Alta\altaChofer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Alta\modificarChofer.Designer.vb">
+      <DependentUpon>modificarChofer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta\modificarChofer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alta\modificarSocio.Designer.vb">
+      <DependentUpon>modificarSocio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta\modificarSocio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alta\modificarVehiculo.Designer.vb">
+      <DependentUpon>modificarVehiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta\modificarVehiculo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +149,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alta\altaChofer.resx">
       <DependentUpon>altaChofer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alta\modificarChofer.resx">
+      <DependentUpon>modificarChofer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alta\modificarSocio.resx">
+      <DependentUpon>modificarSocio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alta\modificarVehiculo.resx">
+      <DependentUpon>modificarVehiculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

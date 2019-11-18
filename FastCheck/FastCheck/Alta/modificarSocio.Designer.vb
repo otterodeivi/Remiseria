@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class altaSocio
+Partial Class modificarSocio
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,6 +23,7 @@ Partial Class altaSocio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim IdSocioLabel As System.Windows.Forms.Label
         Dim DniLabel As System.Windows.Forms.Label
         Dim NombreLabel As System.Windows.Forms.Label
         Dim ApellidoLabel As System.Windows.Forms.Label
@@ -31,20 +32,21 @@ Partial Class altaSocio
         Me.SociosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SociosTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.sociosTableAdapter()
         Me.TableAdapterManager = New FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager()
+        Me.IdSocioTextBox = New System.Windows.Forms.TextBox()
         Me.DniTextBox = New System.Windows.Forms.TextBox()
         Me.NombreTextBox = New System.Windows.Forms.TextBox()
         Me.ApellidoTextBox = New System.Windows.Forms.TextBox()
         Me.TelefonoTextBox = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SociosDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        IdSocioLabel = New System.Windows.Forms.Label()
         DniLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         ApellidoLabel = New System.Windows.Forms.Label()
@@ -53,42 +55,6 @@ Partial Class altaSocio
         CType(Me.SociosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SociosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DniLabel
-        '
-        DniLabel.AutoSize = True
-        DniLabel.Location = New System.Drawing.Point(59, 55)
-        DniLabel.Name = "DniLabel"
-        DniLabel.Size = New System.Drawing.Size(24, 13)
-        DniLabel.TabIndex = 3
-        DniLabel.Text = "dni:"
-        '
-        'NombreLabel
-        '
-        NombreLabel.AutoSize = True
-        NombreLabel.Location = New System.Drawing.Point(59, 80)
-        NombreLabel.Name = "NombreLabel"
-        NombreLabel.Size = New System.Drawing.Size(45, 13)
-        NombreLabel.TabIndex = 5
-        NombreLabel.Text = "nombre:"
-        '
-        'ApellidoLabel
-        '
-        ApellidoLabel.AutoSize = True
-        ApellidoLabel.Location = New System.Drawing.Point(59, 106)
-        ApellidoLabel.Name = "ApellidoLabel"
-        ApellidoLabel.Size = New System.Drawing.Size(46, 13)
-        ApellidoLabel.TabIndex = 7
-        ApellidoLabel.Text = "apellido:"
-        '
-        'TelefonoLabel
-        '
-        TelefonoLabel.AutoSize = True
-        TelefonoLabel.Location = New System.Drawing.Point(59, 132)
-        TelefonoLabel.Name = "TelefonoLabel"
-        TelefonoLabel.Size = New System.Drawing.Size(48, 13)
-        TelefonoLabel.TabIndex = 9
-        TelefonoLabel.Text = "telefono:"
         '
         'RemiseriaDataSet
         '
@@ -117,73 +83,117 @@ Partial Class altaSocio
         Me.TableAdapterManager.vehiculoTableAdapter = Nothing
         Me.TableAdapterManager.viajesTableAdapter = Nothing
         '
+        'IdSocioLabel
+        '
+        IdSocioLabel.AutoSize = True
+        IdSocioLabel.Location = New System.Drawing.Point(25, 34)
+        IdSocioLabel.Name = "IdSocioLabel"
+        IdSocioLabel.Size = New System.Drawing.Size(48, 13)
+        IdSocioLabel.TabIndex = 1
+        IdSocioLabel.Text = "id Socio:"
+        '
+        'IdSocioTextBox
+        '
+        Me.IdSocioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SociosBindingSource, "idSocio", True))
+        Me.IdSocioTextBox.Location = New System.Drawing.Point(79, 31)
+        Me.IdSocioTextBox.Name = "IdSocioTextBox"
+        Me.IdSocioTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.IdSocioTextBox.TabIndex = 2
+        '
+        'DniLabel
+        '
+        DniLabel.AutoSize = True
+        DniLabel.Location = New System.Drawing.Point(25, 60)
+        DniLabel.Name = "DniLabel"
+        DniLabel.Size = New System.Drawing.Size(24, 13)
+        DniLabel.TabIndex = 3
+        DniLabel.Text = "dni:"
+        '
         'DniTextBox
         '
         Me.DniTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SociosBindingSource, "dni", True))
-        Me.DniTextBox.Location = New System.Drawing.Point(113, 51)
+        Me.DniTextBox.Location = New System.Drawing.Point(79, 57)
         Me.DniTextBox.Name = "DniTextBox"
         Me.DniTextBox.Size = New System.Drawing.Size(100, 20)
         Me.DniTextBox.TabIndex = 4
         '
+        'NombreLabel
+        '
+        NombreLabel.AutoSize = True
+        NombreLabel.Location = New System.Drawing.Point(25, 86)
+        NombreLabel.Name = "NombreLabel"
+        NombreLabel.Size = New System.Drawing.Size(45, 13)
+        NombreLabel.TabIndex = 5
+        NombreLabel.Text = "nombre:"
+        '
         'NombreTextBox
         '
         Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SociosBindingSource, "nombre", True))
-        Me.NombreTextBox.Location = New System.Drawing.Point(113, 77)
+        Me.NombreTextBox.Location = New System.Drawing.Point(79, 83)
         Me.NombreTextBox.Name = "NombreTextBox"
         Me.NombreTextBox.Size = New System.Drawing.Size(100, 20)
         Me.NombreTextBox.TabIndex = 6
         '
+        'ApellidoLabel
+        '
+        ApellidoLabel.AutoSize = True
+        ApellidoLabel.Location = New System.Drawing.Point(25, 112)
+        ApellidoLabel.Name = "ApellidoLabel"
+        ApellidoLabel.Size = New System.Drawing.Size(46, 13)
+        ApellidoLabel.TabIndex = 7
+        ApellidoLabel.Text = "apellido:"
+        '
         'ApellidoTextBox
         '
         Me.ApellidoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SociosBindingSource, "apellido", True))
-        Me.ApellidoTextBox.Location = New System.Drawing.Point(113, 103)
+        Me.ApellidoTextBox.Location = New System.Drawing.Point(79, 109)
         Me.ApellidoTextBox.Name = "ApellidoTextBox"
         Me.ApellidoTextBox.Size = New System.Drawing.Size(100, 20)
         Me.ApellidoTextBox.TabIndex = 8
         '
+        'TelefonoLabel
+        '
+        TelefonoLabel.AutoSize = True
+        TelefonoLabel.Location = New System.Drawing.Point(25, 138)
+        TelefonoLabel.Name = "TelefonoLabel"
+        TelefonoLabel.Size = New System.Drawing.Size(48, 13)
+        TelefonoLabel.TabIndex = 9
+        TelefonoLabel.Text = "telefono:"
+        '
         'TelefonoTextBox
         '
         Me.TelefonoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SociosBindingSource, "telefono", True))
-        Me.TelefonoTextBox.Location = New System.Drawing.Point(113, 129)
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(79, 135)
         Me.TelefonoTextBox.Name = "TelefonoTextBox"
         Me.TelefonoTextBox.Size = New System.Drawing.Size(100, 20)
         Me.TelefonoTextBox.TabIndex = 10
         '
-        'Button1
+        'Button3
         '
-        Me.Button1.Location = New System.Drawing.Point(29, 199)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "CREAR"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button3.Location = New System.Drawing.Point(75, 221)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 21
+        Me.Button3.Text = "VOLVER"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(197, 199)
+        Me.Button2.Location = New System.Drawing.Point(136, 182)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 12
-        Me.Button2.Text = "VOLVER"
+        Me.Button2.TabIndex = 20
+        Me.Button2.Text = "MODIFICAR"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button3
+        'Button1
         '
-        Me.Button3.Location = New System.Drawing.Point(113, 199)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 13
-        Me.Button3.Text = "ELIMINAR"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(113, 230)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 14
-        Me.Button4.Text = "MODIFICAR"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button1.Location = New System.Drawing.Point(16, 182)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 19
+        Me.Button1.Text = "BUSCAR"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'SociosDataGridView
         '
@@ -191,10 +201,10 @@ Partial Class altaSocio
         Me.SociosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SociosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.SociosDataGridView.DataSource = Me.SociosBindingSource
-        Me.SociosDataGridView.Location = New System.Drawing.Point(278, 33)
+        Me.SociosDataGridView.Location = New System.Drawing.Point(228, 24)
         Me.SociosDataGridView.Name = "SociosDataGridView"
-        Me.SociosDataGridView.Size = New System.Drawing.Size(548, 220)
-        Me.SociosDataGridView.TabIndex = 14
+        Me.SociosDataGridView.Size = New System.Drawing.Size(551, 220)
+        Me.SociosDataGridView.TabIndex = 21
         '
         'DataGridViewTextBoxColumn1
         '
@@ -227,16 +237,17 @@ Partial Class altaSocio
         Me.DataGridViewTextBoxColumn5.HeaderText = "telefono"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         '
-        'altaSocio
+        'modificarSocio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(836, 321)
+        Me.ClientSize = New System.Drawing.Size(804, 283)
         Me.Controls.Add(Me.SociosDataGridView)
-        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(IdSocioLabel)
+        Me.Controls.Add(Me.IdSocioTextBox)
         Me.Controls.Add(DniLabel)
         Me.Controls.Add(Me.DniTextBox)
         Me.Controls.Add(NombreLabel)
@@ -245,8 +256,8 @@ Partial Class altaSocio
         Me.Controls.Add(Me.ApellidoTextBox)
         Me.Controls.Add(TelefonoLabel)
         Me.Controls.Add(Me.TelefonoTextBox)
-        Me.Name = "altaSocio"
-        Me.Text = "altaSocio"
+        Me.Name = "modificarSocio"
+        Me.Text = "modificarSocio"
         CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SociosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SociosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -258,14 +269,14 @@ Partial Class altaSocio
     Friend WithEvents SociosBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents SociosTableAdapter As FastCheck.remiseriaDataSetTableAdapters.sociosTableAdapter
     Friend WithEvents TableAdapterManager As FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents IdSocioTextBox As System.Windows.Forms.TextBox
     Friend WithEvents DniTextBox As System.Windows.Forms.TextBox
     Friend WithEvents NombreTextBox As System.Windows.Forms.TextBox
     Friend WithEvents ApellidoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents TelefonoTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents SociosDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn

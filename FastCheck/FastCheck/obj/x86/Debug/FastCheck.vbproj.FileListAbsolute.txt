@@ -22,3 +22,4 @@ C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.vbpro
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.exe
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.altaChofer.resources
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.altaSocio.resources
+C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.modificarChofer.resources

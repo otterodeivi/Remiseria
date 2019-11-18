@@ -1,13 +1,12 @@
-﻿Imports System.Data
-Imports System.Data.Sql
-Imports System.Data.SqlClient
-
+﻿
 
 Public Class altaVehiculo
 
 
 
     Private Sub altaVehiculo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'RemiseriaDataSet.viajes' Puede moverla o quitarla según sea necesario.
+        Me.ViajesTableAdapter.Fill(Me.RemiseriaDataSet.viajes)
         'TODO: esta línea de código carga datos en la tabla 'RemiseriaDataSet.vehiculo' Puede moverla o quitarla según sea necesario.
         Me.VehiculoTableAdapter.Fill(Me.RemiseriaDataSet.vehiculo)
         Me.VehiculoBindingSource.AddNew()
@@ -52,5 +51,27 @@ Public Class altaVehiculo
 
     Private Sub DuenioTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DuenioTextBox.TextChanged
 
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Dim fila, CodConsulta, aux As Integer
+        CodConsulta = InputBox("Ingrese el numero del Vehiculo que desea eliminar")
+        fila = Me.VehiculoBindingSource.Find("idVehiculo", CodConsulta)
+        If fila = -1 Then
+            MsgBox("El chofer no existe, jamas existio o fue eliminaro el...")
+        Else
+            VehiculoBindingSource.Position = fila
+            aux = MsgBox("quiere eliminar el Socio: " & CodConsulta, 32 + 1, "eliminar")
+            If aux = 1 Then
+                Me.VehiculoBindingSource.RemoveCurrent()
+                Me.VehiculoBindingSource.EndEdit()
+                Me.TableAdapterManager.UpdateAll(Me.RemiseriaDataSet)
+                MsgBox("el socio fue eliminado con exito")
+            End If
+        End If
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        modificarVehiculo.Show()
     End Sub
 End Class
