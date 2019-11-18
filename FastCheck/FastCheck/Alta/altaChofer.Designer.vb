@@ -38,7 +38,6 @@ Partial Class altaChofer
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ChoferTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.choferTableAdapter()
         Me.TableAdapterManager = New FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -180,6 +179,7 @@ Partial Class altaChofer
         Me.TableAdapterManager.vehiculoTableAdapter = Nothing
         Me.TableAdapterManager.viajesTableAdapter = Nothing
         '
+<<<<<<< Updated upstream
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -189,6 +189,8 @@ Partial Class altaChofer
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Escribalo sin espacios"
         '
+=======
+>>>>>>> Stashed changes
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(255, 206)
@@ -273,7 +275,6 @@ Partial Class altaChofer
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(NombreLabel)
         Me.Controls.Add(Me.NombreTextBox)
@@ -304,7 +305,6 @@ Partial Class altaChofer
     Friend WithEvents DireccionTextBox As System.Windows.Forms.TextBox
     Friend WithEvents TelefonoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button

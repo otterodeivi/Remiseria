@@ -41,16 +41,6 @@ Partial Public Class remiseriaDataSet
     
     Private tableviajes As viajesDataTable
     
-    Private relationFK_turnos_chofer As Global.System.Data.DataRelation
-    
-    Private relationFK_turnos_vehiculo As Global.System.Data.DataRelation
-    
-    Private relationFK_viajes_chofer As Global.System.Data.DataRelation
-    
-    Private relationFK_viajes_socios As Global.System.Data.DataRelation
-    
-    Private relationFK_viajes_vehiculo As Global.System.Data.DataRelation
-    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -372,11 +362,6 @@ Partial Public Class remiseriaDataSet
                 Me.tableviajes.InitVars
             End If
         End If
-        Me.relationFK_turnos_chofer = Me.Relations("FK_turnos_chofer")
-        Me.relationFK_turnos_vehiculo = Me.Relations("FK_turnos_vehiculo")
-        Me.relationFK_viajes_chofer = Me.Relations("FK_viajes_chofer")
-        Me.relationFK_viajes_socios = Me.Relations("FK_viajes_socios")
-        Me.relationFK_viajes_vehiculo = Me.Relations("FK_viajes_vehiculo")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -403,16 +388,6 @@ Partial Public Class remiseriaDataSet
         MyBase.Tables.Add(Me.tablevehiculo)
         Me.tableviajes = New viajesDataTable()
         MyBase.Tables.Add(Me.tableviajes)
-        Me.relationFK_turnos_chofer = New Global.System.Data.DataRelation("FK_turnos_chofer", New Global.System.Data.DataColumn() {Me.tablechofer.idChoferColumn}, New Global.System.Data.DataColumn() {Me.tableturnos.idChoferColumn}, false)
-        Me.Relations.Add(Me.relationFK_turnos_chofer)
-        Me.relationFK_turnos_vehiculo = New Global.System.Data.DataRelation("FK_turnos_vehiculo", New Global.System.Data.DataColumn() {Me.tablevehiculo.idVehiculoColumn}, New Global.System.Data.DataColumn() {Me.tableturnos.idVehiculoColumn}, false)
-        Me.Relations.Add(Me.relationFK_turnos_vehiculo)
-        Me.relationFK_viajes_chofer = New Global.System.Data.DataRelation("FK_viajes_chofer", New Global.System.Data.DataColumn() {Me.tablechofer.idChoferColumn}, New Global.System.Data.DataColumn() {Me.tableviajes.idChoferColumn}, false)
-        Me.Relations.Add(Me.relationFK_viajes_chofer)
-        Me.relationFK_viajes_socios = New Global.System.Data.DataRelation("FK_viajes_socios", New Global.System.Data.DataColumn() {Me.tablesocios.idSocioColumn}, New Global.System.Data.DataColumn() {Me.tableviajes.idSocioColumn}, false)
-        Me.Relations.Add(Me.relationFK_viajes_socios)
-        Me.relationFK_viajes_vehiculo = New Global.System.Data.DataRelation("FK_viajes_vehiculo", New Global.System.Data.DataColumn() {Me.tablevehiculo.idVehiculoColumn}, New Global.System.Data.DataColumn() {Me.tableviajes.idVehiculoColumn}, false)
-        Me.Relations.Add(Me.relationFK_viajes_vehiculo)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1957,15 +1932,9 @@ Partial Public Class remiseriaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddturnosRow(ByVal parentchoferRowByFK_turnos_chofer As choferRow, ByVal parentvehiculoRowByFK_turnos_vehiculo As vehiculoRow, ByVal ingreso As Date, ByVal egreso As Date, ByVal turno As String, ByVal disponible As Boolean) As turnosRow
+        Public Overloads Function AddturnosRow(ByVal idChofer As Integer, ByVal idVehiculo As Integer, ByVal ingreso As Date, ByVal egreso As Date, ByVal turno As String, ByVal disponible As Boolean) As turnosRow
             Dim rowturnosRow As turnosRow = CType(Me.NewRow,turnosRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, ingreso, egreso, turno, disponible}
-            If (Not (parentchoferRowByFK_turnos_chofer) Is Nothing) Then
-                columnValuesArray(1) = parentchoferRowByFK_turnos_chofer(0)
-            End If
-            If (Not (parentvehiculoRowByFK_turnos_vehiculo) Is Nothing) Then
-                columnValuesArray(2) = parentvehiculoRowByFK_turnos_vehiculo(0)
-            End If
+            Dim columnValuesArray() As Object = New Object() {Nothing, idChofer, idVehiculo, ingreso, egreso, turno, disponible}
             rowturnosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowturnosRow)
             Return rowturnosRow
@@ -3062,18 +3031,9 @@ Partial Public Class remiseriaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddviajesRow(ByVal parentchoferRowByFK_viajes_chofer As choferRow, ByVal parentsociosRowByFK_viajes_socios As sociosRow, ByVal parentvehiculoRowByFK_viajes_vehiculo As vehiculoRow, ByVal fecha_origen As Date, ByVal fecha_destino As Date, ByVal total As Decimal, ByVal origen As String, ByVal destino As String, ByVal reserva As Boolean, ByVal cta_cte As Boolean, ByVal estado As String) As viajesRow
+        Public Overloads Function AddviajesRow(ByVal idChofer As Integer, ByVal idSocio As Integer, ByVal idVehiculo As Integer, ByVal fecha_origen As Date, ByVal fecha_destino As Date, ByVal total As Decimal, ByVal origen As String, ByVal destino As String, ByVal reserva As Boolean, ByVal cta_cte As Boolean, ByVal estado As String) As viajesRow
             Dim rowviajesRow As viajesRow = CType(Me.NewRow,viajesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, Nothing, fecha_origen, fecha_destino, total, origen, destino, reserva, cta_cte, estado}
-            If (Not (parentchoferRowByFK_viajes_chofer) Is Nothing) Then
-                columnValuesArray(1) = parentchoferRowByFK_viajes_chofer(0)
-            End If
-            If (Not (parentsociosRowByFK_viajes_socios) Is Nothing) Then
-                columnValuesArray(2) = parentsociosRowByFK_viajes_socios(0)
-            End If
-            If (Not (parentvehiculoRowByFK_viajes_vehiculo) Is Nothing) Then
-                columnValuesArray(3) = parentvehiculoRowByFK_viajes_vehiculo(0)
-            End If
+            Dim columnValuesArray() As Object = New Object() {Nothing, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, total, origen, destino, reserva, cta_cte, estado}
             rowviajesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowviajesRow)
             Return rowviajesRow
@@ -3442,26 +3402,6 @@ Partial Public Class remiseriaDataSet
         Public Sub SettelefonoNull()
             Me(Me.tablechofer.telefonoColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetturnosRows() As turnosRow()
-            If (Me.Table.ChildRelations("FK_turnos_chofer") Is Nothing) Then
-                Return New turnosRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_turnos_chofer")),turnosRow())
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetviajesRows() As viajesRow()
-            If (Me.Table.ChildRelations("FK_viajes_chofer") Is Nothing) Then
-                Return New viajesRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_viajes_chofer")),viajesRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
@@ -3797,16 +3737,6 @@ Partial Public Class remiseriaDataSet
         Public Sub SettelefonoNull()
             Me(Me.tablesocios.telefonoColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetviajesRows() As viajesRow()
-            If (Me.Table.ChildRelations("FK_viajes_socios") Is Nothing) Then
-                Return New viajesRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_viajes_socios")),viajesRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
@@ -3922,28 +3852,6 @@ Partial Public Class remiseriaDataSet
             End Get
             Set
                 Me(Me.tableturnos.disponibleColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property choferRow() As choferRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_turnos_chofer")),choferRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_turnos_chofer"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property vehiculoRow() As vehiculoRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_turnos_vehiculo")),vehiculoRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_turnos_vehiculo"))
             End Set
         End Property
         
@@ -4423,26 +4331,6 @@ Partial Public Class remiseriaDataSet
         Public Sub Setvenc_vtvNull()
             Me(Me.tablevehiculo.venc_vtvColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetturnosRows() As turnosRow()
-            If (Me.Table.ChildRelations("FK_turnos_vehiculo") Is Nothing) Then
-                Return New turnosRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_turnos_vehiculo")),turnosRow())
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetviajesRows() As viajesRow()
-            If (Me.Table.ChildRelations("FK_viajes_vehiculo") Is Nothing) Then
-                Return New viajesRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_viajes_vehiculo")),viajesRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
@@ -4633,39 +4521,6 @@ Partial Public Class remiseriaDataSet
             End Get
             Set
                 Me(Me.tableviajes.estadoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property choferRow() As choferRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_viajes_chofer")),choferRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_viajes_chofer"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property sociosRow() As sociosRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_viajes_socios")),sociosRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_viajes_socios"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property vehiculoRow() As vehiculoRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_viajes_vehiculo")),vehiculoRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_viajes_vehiculo"))
             End Set
         End Property
         
@@ -5301,17 +5156,22 @@ Namespace remiseriaDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT idChofer, nombre, apellido, dni, direccion, telefono FROM dbo.chofer"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        idChofer, nombre, apellido, dni, direccion, telefono"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         "& _ 
-                "   chofer"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idChofer = @id)"
+            Me._commandCollection(1).CommandText = "DELETE FROM chofer"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idChofer = @idChofer)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idChofer", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idChofer", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idChofer", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        idChofer, nombre, apellido, dni, direccion, telefono"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         "& _ 
+                "   chofer"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (idChofer = @id)"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idChofer", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5343,7 +5203,7 @@ Namespace remiseriaDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
         Public Overloads Overridable Function BuscarChofer(ByVal dataTable As remiseriaDataSet.choferDataTable, ByVal id As Integer) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(id,Integer)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -5569,6 +5429,29 @@ Namespace remiseriaDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update(ByVal nombre As String, ByVal apellido As String, ByVal dni As Global.System.Nullable(Of Integer), ByVal direccion As String, ByVal telefono As Global.System.Nullable(Of Integer), ByVal Original_idChofer As Integer, ByVal Original_nombre As String, ByVal Original_apellido As String, ByVal Original_dni As Global.System.Nullable(Of Integer), ByVal Original_direccion As String, ByVal Original_telefono As Global.System.Nullable(Of Integer)) As Integer
             Return Me.Update(nombre, apellido, dni, direccion, telefono, Original_idChofer, Original_nombre, Original_apellido, Original_dni, Original_direccion, Original_telefono, Original_idChofer)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, false)>  _
+        Public Overloads Overridable Function bajaChofer(ByVal idChofer As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            command.Parameters(0).Value = CType(idChofer,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     
@@ -8573,12 +8456,26 @@ Namespace remiseriaDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tota"& _ 
                 "l, origen, destino, reserva, cta_cte, estado FROM dbo.viajes"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "dbo.nuevoViaje"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idChofer", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idSocio", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idVehiculo", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fecha", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@origen", Global.System.Data.SqlDbType.VarChar, 1, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@destino", Global.System.Data.SqlDbType.VarChar, 1, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@reserva", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cta", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@estado", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9013,6 +8910,72 @@ Namespace remiseriaDataSetTableAdapters
                     ByVal Original_cta_cte As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_estado As String) As Integer
             Return Me.Update(idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, total, origen, destino, reserva, cta_cte, estado, Original_registro, Original_idChofer, Original_idSocio, Original_idVehiculo, Original_fecha_origen, Original_fecha_destino, Original_total, Original_origen, Original_destino, Original_reserva, Original_cta_cte, Original_estado, Original_registro)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function nuevoViaje(ByVal idChofer As Global.System.Nullable(Of Integer), ByVal idSocio As Global.System.Nullable(Of Integer), ByVal idVehiculo As Global.System.Nullable(Of Integer), ByVal fecha As Global.System.Nullable(Of Date), ByVal origen As String, ByVal destino As String, ByVal reserva As Global.System.Nullable(Of Boolean), ByVal cta As Global.System.Nullable(Of Boolean), ByVal estado As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (idChofer.HasValue = true) Then
+                command.Parameters(1).Value = CType(idChofer.Value,Integer)
+            Else
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (idSocio.HasValue = true) Then
+                command.Parameters(2).Value = CType(idSocio.Value,Integer)
+            Else
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (idVehiculo.HasValue = true) Then
+                command.Parameters(3).Value = CType(idVehiculo.Value,Integer)
+            Else
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (fecha.HasValue = true) Then
+                command.Parameters(4).Value = CType(fecha.Value,Date)
+            Else
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (origen Is Nothing) Then
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(5).Value = CType(origen,String)
+            End If
+            If (destino Is Nothing) Then
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(6).Value = CType(destino,String)
+            End If
+            If (reserva.HasValue = true) Then
+                command.Parameters(7).Value = CType(reserva.Value,Boolean)
+            Else
+                command.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (cta.HasValue = true) Then
+                command.Parameters(8).Value = CType(cta.Value,Boolean)
+            Else
+                command.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (estado Is Nothing) Then
+                command.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(9).Value = CType(estado,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     
@@ -9489,39 +9452,21 @@ Namespace remiseriaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As remiseriaDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._sociosTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.socios.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._sociosTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._vehiculoTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.vehiculo.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._vehiculoTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._choferTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.chofer.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._choferTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._valoresTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.valores.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._valoresTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._turnosTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.turnos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._turnosTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -9534,12 +9479,12 @@ Namespace remiseriaDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._resumenRemiseriaTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.resumenRemiseria.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._vehiculoTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.vehiculo.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._resumenRemiseriaTableAdapter.Update(updatedRows))
+                    result = (result + Me._vehiculoTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -9552,12 +9497,30 @@ Namespace remiseriaDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._turnosTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.turnos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._choferTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.chofer.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._turnosTableAdapter.Update(updatedRows))
+                    result = (result + Me._choferTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._sociosTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.socios.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._sociosTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._resumenRemiseriaTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.resumenRemiseria.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._resumenRemiseriaTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -9571,35 +9534,19 @@ Namespace remiseriaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As remiseriaDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._sociosTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.socios.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._sociosTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._vehiculoTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.vehiculo.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._vehiculoTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._choferTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.chofer.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._choferTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._valoresTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.valores.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._valoresTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._turnosTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.turnos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._turnosTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -9611,11 +9558,11 @@ Namespace remiseriaDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._resumenRemiseriaTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.resumenRemiseria.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._vehiculoTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.vehiculo.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._resumenRemiseriaTableAdapter.Update(addedRows))
+                    result = (result + Me._vehiculoTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -9627,11 +9574,27 @@ Namespace remiseriaDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._turnosTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.turnos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._choferTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.chofer.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._turnosTableAdapter.Update(addedRows))
+                    result = (result + Me._choferTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._sociosTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.socios.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._sociosTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._resumenRemiseriaTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.resumenRemiseria.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._resumenRemiseriaTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -9645,22 +9608,6 @@ Namespace remiseriaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As remiseriaDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._turnosTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.turnos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._turnosTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._liqCtaCteTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.liqCtaCte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._liqCtaCteTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._resumenRemiseriaTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.resumenRemiseria.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -9669,19 +9616,11 @@ Namespace remiseriaDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._viajesTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.viajes.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._sociosTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.socios.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._viajesTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._valoresTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.valores.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._valoresTableAdapter.Update(deletedRows))
+                    result = (result + Me._sociosTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -9693,6 +9632,14 @@ Namespace remiseriaDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
+            If (Not (Me._liqCtaCteTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.liqCtaCte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._liqCtaCteTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._vehiculoTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.vehiculo.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -9701,11 +9648,27 @@ Namespace remiseriaDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._sociosTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.socios.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._viajesTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.viajes.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._sociosTableAdapter.Update(deletedRows))
+                    result = (result + Me._viajesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._turnosTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.turnos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._turnosTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._valoresTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.valores.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._valoresTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If

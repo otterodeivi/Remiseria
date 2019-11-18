@@ -90,6 +90,7 @@
     <Compile Include="Alta\altaChofer.vb">
       <SubType>Form</SubType>
     </Compile>
+
     <Compile Include="Alta\modificarChofer.Designer.vb">
       <DependentUpon>modificarChofer.vb</DependentUpon>
     </Compile>
@@ -108,6 +109,9 @@
     <Compile Include="Alta\modificarVehiculo.vb">
       <SubType>Form</SubType>
     </Compile>
+
+    <Compile Include="conexion.vb" />
+
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +143,12 @@
     <Compile Include="remiseriaDataSet.vb">
       <DependentUpon>remiseriaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Viajes\nuevoViaje.Designer.vb">
+      <DependentUpon>nuevoViaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Viajes\nuevoViaje.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Alta\altaSocio.resx">
@@ -167,6 +177,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viajes\nuevoViaje.resx">
+      <DependentUpon>nuevoViaje.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

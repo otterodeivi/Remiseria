@@ -151,7 +151,11 @@ Partial Class altaSocio
         '
         'Button1
         '
+<<<<<<< Updated upstream
         Me.Button1.Location = New System.Drawing.Point(29, 199)
+=======
+        Me.Button1.Location = New System.Drawing.Point(46, 199)
+>>>>>>> Stashed changes
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 11
@@ -160,7 +164,11 @@ Partial Class altaSocio
         '
         'Button2
         '
+<<<<<<< Updated upstream
         Me.Button2.Location = New System.Drawing.Point(197, 199)
+=======
+        Me.Button2.Location = New System.Drawing.Point(156, 199)
+>>>>>>> Stashed changes
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 12

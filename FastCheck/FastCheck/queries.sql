@@ -48,6 +48,7 @@ cta_cte bit,
 estado varchar(20)
 );
 
+
 CREATE TABLE turnos(
 idTurno int identity(1,1) primary key,
 idChofer int,
@@ -116,3 +117,30 @@ as
 insert into vehiculo values (@duenio, @modelo, @marca,
 @color, @anio, @dominio, @seguro, @venc_gnc, @venc_vtv);
 
+------------------------------------------
+---------------ATENCION-------------------
+------------------------------------------
+--------EJECUTAR-LOS-SIGUIENTES-----------
+---------------QUERIES--------------------
+------------------------------------------
+
+CREATE view enCurso
+as 
+select registro, idChofer, idSocio, fecha_origen,
+origen, destino, estado from viajes
+where estado = 'en curso';
+
+CREATE procedure nuevoViaje
+@idChofer int,
+@idSocio int,
+@idVehiculo int,
+@fecha datetime,
+@origen varchar,
+@destino varchar,
+@reserva bit,
+@cta bit,
+@estado varchar(20)
+as
+insert into viajes(idChofer,idSocio,idVehiculo,fecha_origen,origen,
+destino,reserva,cta_cte,estado) values(@idChofer,@idSocio,@idVehiculo,
+@fecha,@origen,@destino,@reserva,@cta,@estado);
