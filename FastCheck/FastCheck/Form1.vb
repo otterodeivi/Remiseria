@@ -3,13 +3,19 @@ Imports System.Data.SqlClient
 Imports System.Data
 
 Public Class Form1
-    Dim conexion As conexion = New conexion()
-
+    Dim encurso As conexion = New conexion()
+    Dim reserva As conexion = New conexion()
     Public Sub llenar()
 
-        conexion.Consulta("SELECT registro, idChofer, idSocio ,fecha_origen, origen ,destino, estado FROM enCurso where estado= 'en curso'", "enCurso")
+        encurso.Consulta("SELECT registro, idChofer, idSocio ,fecha_origen, origen ,destino, estado FROM enCurso where estado= 'en curso'", "enCurso")
 
-        DataGridView1.DataSource = conexion.ds.Tables("enCurso")
+        DataGridView1.DataSource = encurso.ds.Tables("enCurso")
+
+
+
+        reserva.Consulta("SELECT registro, idChofer, idSocio, fecha_origen, origen, destino FROM reserva", "reserva")
+        DataGridView2.DataSource = reserva.ds.Tables("enCurso")
+
     End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

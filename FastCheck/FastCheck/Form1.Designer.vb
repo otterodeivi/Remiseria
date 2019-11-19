@@ -31,9 +31,11 @@ Partial Class Form1
         Me.ViajesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ViajesTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.viajesTableAdapter()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViajesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -89,16 +91,25 @@ Partial Class Form1
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(166, 45)
+        Me.DataGridView1.Location = New System.Drawing.Point(274, 45)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(539, 150)
         Me.DataGridView1.TabIndex = 4
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(274, 237)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(539, 150)
+        Me.DataGridView2.TabIndex = 5
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(945, 438)
+        Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -109,6 +120,7 @@ Partial Class Form1
         CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ViajesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -120,5 +132,6 @@ Partial Class Form1
     Friend WithEvents ViajesBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ViajesTableAdapter As FastCheck.remiseriaDataSetTableAdapters.viajesTableAdapter
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
 
 End Class

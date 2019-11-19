@@ -179,18 +179,12 @@ Partial Class altaChofer
         Me.TableAdapterManager.vehiculoTableAdapter = Nothing
         Me.TableAdapterManager.viajesTableAdapter = Nothing
         '
-<<<<<<< Updated upstream
+
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(219, 145)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(111, 13)
-        Me.Label1.TabIndex = 14
-        Me.Label1.Text = "Escribalo sin espacios"
+      
         '
-=======
->>>>>>> Stashed changes
+
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(255, 206)
