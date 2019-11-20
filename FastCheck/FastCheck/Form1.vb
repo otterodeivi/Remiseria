@@ -14,7 +14,7 @@ Public Class Form1
 
 
         reserva.Consulta("SELECT registro, idChofer, idSocio, fecha_origen, origen, destino FROM reserva", "reserva")
-        DataGridView2.DataSource = reserva.ds.Tables("enCurso")
+        DataGridView2.DataSource = reserva.ds.Tables("reserva")
 
     End Sub
 
