@@ -144,3 +144,10 @@ as
 insert into viajes(idChofer,idSocio,idVehiculo,fecha_origen,origen,
 destino,reserva,cta_cte,estado) values(@idChofer,@idSocio,@idVehiculo,
 @fecha,@origen,@destino,@reserva,@cta,@estado);
+
+
+CREATE view reserva
+as 
+select registro, idChofer, idSocio, fecha_origen,
+origen, destino, estado from viajes
+where estado = 'reserva';
