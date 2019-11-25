@@ -1,5 +1,7 @@
 ﻿Public Class Inicio
 
+    Property DBNull As Object
+
  
     Private Sub Inicio_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         diseño()
@@ -46,20 +48,8 @@
 
     End Sub
 
-    Private Sub btnVehiculoSubMenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        mostrarSubMenu(PanelVehiculoMenu)
 
-    End Sub
-
-    Private Sub btnNuevoVehiculo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        hideSubMenu()
-
-    End Sub
-
-    Private Sub btnBuscarVehiculo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        hideSubMenu()
-
-    End Sub
+#Region "turno"
 
 
     Private Sub btnTurnosSubmenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTurnosSubmenu.Click
@@ -81,42 +71,85 @@
         hideSubMenu()
 
     End Sub
-
-   
+#End Region
+#Region "socio"
     Private Sub btnSocioSubmenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSocioSubmenu.Click
         mostrarSubMenu(PanelSocioMenu)
 
     End Sub
 
     Private Sub btnNuevoSocio_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevoSocio.Click
+        openChildForm(New altaSocio())
         hideSubMenu()
 
     End Sub
 
     Private Sub btnBuscarSocio_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscarSocio.Click
+        openChildForm(New modificarSocio())
         hideSubMenu()
 
     End Sub
+#End Region
+#Region "vehiculos"
+    Private Sub btnVehiculoSubMenu_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVehiculoSubMenu.Click
+        mostrarSubMenu(PanelVehiculoMenu)
+    End Sub
 
+    Private Sub btnNuevoVehiculo_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevoVehiculo.Click
+        openChildForm(New altaVehiculo())
+        hideSubMenu()
+    End Sub
+
+    Private Sub btnBuscarVehiculo_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscarVehiculo.Click
+        openChildForm(New modificarVehiculo())
+        hideSubMenu()
+    End Sub
+
+#End Region
+#Region "chofer"
     Private Sub btnChoferSubmenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnChoferSubmenu.Click
         mostrarSubMenu(PanelChoferMenu)
-
     End Sub
 
     Private Sub btnNuevoChofer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevoChofer.Click
+        openChildForm(New altaChofer())
         hideSubMenu()
-
     End Sub
 
     Private Sub btnBuscarChofer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscarChofer.Click
+        openChildForm(New modificarChofer())
         hideSubMenu()
-
     End Sub
 
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
         hideSubMenu()
+    End Sub
+#End Region
+    Dim activo As Form = Nothing
+
+
+    Private Sub openChildForm(ByVal childForm As Form)
+        activo = Nothing
+
+        If activo IsNot Nothing Then
+            activo.Close()
+        Else
+
+            activo = childForm
+            childForm.TopLevel = False
+            childForm.FormBorderStyle = FormBorderStyle.None
+            childForm.Dock = DockStyle.Fill
+            PanelContainer.Controls.Add(childForm)
+            PanelContainer.Tag = childForm
+            childForm.BringToFront()
+            childForm.Show()
+
+
+
+
+        End If
+
 
     End Sub
 
-    
 End Class

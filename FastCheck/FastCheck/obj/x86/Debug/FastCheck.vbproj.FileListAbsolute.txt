@@ -34,3 +34,5 @@ C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.final
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.nuevoViaje.resources
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.vbproj.GenerateResource.Cache
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.Inicio.resources
+C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.Inicio.resources
+C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.finalizarViaje.resources
