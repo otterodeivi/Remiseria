@@ -22,6 +22,7 @@ Partial Class Inicio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PanelMenuSide = New System.Windows.Forms.Panel()
         Me.PanelVehiculoMenu = New System.Windows.Forms.Panel()
         Me.btnBuscarVehiculo = New System.Windows.Forms.Button()
@@ -45,12 +46,18 @@ Partial Class Inicio
         Me.btnViajeSubMenu = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PanelContainer = New System.Windows.Forms.Panel()
+        Me.RemiseriaDataSet = New FastCheck.remiseriaDataSet()
+        Me.TurnosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TurnosTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.turnosTableAdapter()
+        Me.TableAdapterManager = New FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager()
         Me.PanelMenuSide.SuspendLayout()
         Me.PanelVehiculoMenu.SuspendLayout()
         Me.PanelChoferMenu.SuspendLayout()
         Me.PanelSocioMenu.SuspendLayout()
         Me.panelTurnoMenu.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TurnosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelMenuSide
@@ -79,7 +86,7 @@ Partial Class Inicio
         Me.PanelVehiculoMenu.Controls.Add(Me.btnBuscarVehiculo)
         Me.PanelVehiculoMenu.Controls.Add(Me.btnNuevoVehiculo)
         Me.PanelVehiculoMenu.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelVehiculoMenu.Location = New System.Drawing.Point(0, 528)
+        Me.PanelVehiculoMenu.Location = New System.Drawing.Point(0, 597)
         Me.PanelVehiculoMenu.Name = "PanelVehiculoMenu"
         Me.PanelVehiculoMenu.Size = New System.Drawing.Size(264, 68)
         Me.PanelVehiculoMenu.TabIndex = 14
@@ -119,7 +126,7 @@ Partial Class Inicio
         Me.btnVehiculoSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnVehiculoSubMenu.FlatAppearance.BorderSize = 0
         Me.btnVehiculoSubMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVehiculoSubMenu.Location = New System.Drawing.Point(0, 484)
+        Me.btnVehiculoSubMenu.Location = New System.Drawing.Point(0, 553)
         Me.btnVehiculoSubMenu.Name = "btnVehiculoSubMenu"
         Me.btnVehiculoSubMenu.Size = New System.Drawing.Size(264, 44)
         Me.btnVehiculoSubMenu.TabIndex = 13
@@ -133,7 +140,7 @@ Partial Class Inicio
         Me.PanelChoferMenu.Controls.Add(Me.btnBuscarChofer)
         Me.PanelChoferMenu.Controls.Add(Me.btnNuevoChofer)
         Me.PanelChoferMenu.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelChoferMenu.Location = New System.Drawing.Point(0, 395)
+        Me.PanelChoferMenu.Location = New System.Drawing.Point(0, 464)
         Me.PanelChoferMenu.Name = "PanelChoferMenu"
         Me.PanelChoferMenu.Size = New System.Drawing.Size(264, 89)
         Me.PanelChoferMenu.TabIndex = 12
@@ -186,7 +193,7 @@ Partial Class Inicio
         Me.btnChoferSubmenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnChoferSubmenu.FlatAppearance.BorderSize = 0
         Me.btnChoferSubmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnChoferSubmenu.Location = New System.Drawing.Point(0, 351)
+        Me.btnChoferSubmenu.Location = New System.Drawing.Point(0, 420)
         Me.btnChoferSubmenu.Name = "btnChoferSubmenu"
         Me.btnChoferSubmenu.Size = New System.Drawing.Size(264, 44)
         Me.btnChoferSubmenu.TabIndex = 11
@@ -199,7 +206,7 @@ Partial Class Inicio
         Me.PanelSocioMenu.Controls.Add(Me.btnBuscarSocio)
         Me.PanelSocioMenu.Controls.Add(Me.btnNuevoSocio)
         Me.PanelSocioMenu.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelSocioMenu.Location = New System.Drawing.Point(0, 292)
+        Me.PanelSocioMenu.Location = New System.Drawing.Point(0, 361)
         Me.PanelSocioMenu.Name = "PanelSocioMenu"
         Me.PanelSocioMenu.Size = New System.Drawing.Size(264, 59)
         Me.PanelSocioMenu.TabIndex = 10
@@ -238,7 +245,7 @@ Partial Class Inicio
         Me.btnSocioSubmenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnSocioSubmenu.FlatAppearance.BorderSize = 0
         Me.btnSocioSubmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSocioSubmenu.Location = New System.Drawing.Point(0, 248)
+        Me.btnSocioSubmenu.Location = New System.Drawing.Point(0, 317)
         Me.btnSocioSubmenu.Name = "btnSocioSubmenu"
         Me.btnSocioSubmenu.Size = New System.Drawing.Size(264, 44)
         Me.btnSocioSubmenu.TabIndex = 9
@@ -252,7 +259,7 @@ Partial Class Inicio
         Me.panelTurnoMenu.Controls.Add(Me.btnActivos)
         Me.panelTurnoMenu.Controls.Add(Me.btnNuevoTurno)
         Me.panelTurnoMenu.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelTurnoMenu.Location = New System.Drawing.Point(0, 159)
+        Me.panelTurnoMenu.Location = New System.Drawing.Point(0, 228)
         Me.panelTurnoMenu.Name = "panelTurnoMenu"
         Me.panelTurnoMenu.Size = New System.Drawing.Size(264, 89)
         Me.panelTurnoMenu.TabIndex = 8
@@ -305,7 +312,7 @@ Partial Class Inicio
         Me.btnTurnosSubmenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnTurnosSubmenu.FlatAppearance.BorderSize = 0
         Me.btnTurnosSubmenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTurnosSubmenu.Location = New System.Drawing.Point(0, 115)
+        Me.btnTurnosSubmenu.Location = New System.Drawing.Point(0, 184)
         Me.btnTurnosSubmenu.Name = "btnTurnosSubmenu"
         Me.btnTurnosSubmenu.Size = New System.Drawing.Size(264, 44)
         Me.btnTurnosSubmenu.TabIndex = 7
@@ -317,7 +324,7 @@ Partial Class Inicio
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.Panel4.Controls.Add(Me.btnViajeSubMenu)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(0, 70)
+        Me.Panel4.Location = New System.Drawing.Point(0, 139)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(264, 45)
         Me.Panel4.TabIndex = 2
@@ -337,10 +344,11 @@ Partial Class Inicio
         '
         'Panel2
         '
+        Me.Panel2.AutoScroll = True
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(264, 70)
+        Me.Panel2.Size = New System.Drawing.Size(264, 139)
         Me.Panel2.TabIndex = 0
         '
         'PanelContainer
@@ -351,6 +359,33 @@ Partial Class Inicio
         Me.PanelContainer.Name = "PanelContainer"
         Me.PanelContainer.Size = New System.Drawing.Size(934, 438)
         Me.PanelContainer.TabIndex = 1
+        '
+        'RemiseriaDataSet
+        '
+        Me.RemiseriaDataSet.DataSetName = "remiseriaDataSet"
+        Me.RemiseriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TurnosBindingSource
+        '
+        Me.TurnosBindingSource.DataMember = "turnos"
+        Me.TurnosBindingSource.DataSource = Me.RemiseriaDataSet
+        '
+        'TurnosTableAdapter
+        '
+        Me.TurnosTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.choferTableAdapter = Nothing
+        Me.TableAdapterManager.liqCtaCteTableAdapter = Nothing
+        Me.TableAdapterManager.resumenRemiseriaTableAdapter = Nothing
+        Me.TableAdapterManager.sociosTableAdapter = Nothing
+        Me.TableAdapterManager.turnosTableAdapter = Me.TurnosTableAdapter
+        Me.TableAdapterManager.UpdateOrder = FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.valoresTableAdapter = Nothing
+        Me.TableAdapterManager.vehiculoTableAdapter = Nothing
+        Me.TableAdapterManager.viajesTableAdapter = Nothing
         '
         'Inicio
         '
@@ -367,6 +402,8 @@ Partial Class Inicio
         Me.PanelSocioMenu.ResumeLayout(False)
         Me.panelTurnoMenu.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
+        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TurnosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -393,4 +430,8 @@ Partial Class Inicio
     Friend WithEvents PanelVehiculoMenu As System.Windows.Forms.Panel
     Friend WithEvents btnBuscarVehiculo As System.Windows.Forms.Button
     Friend WithEvents btnNuevoVehiculo As System.Windows.Forms.Button
+    Friend WithEvents RemiseriaDataSet As FastCheck.remiseriaDataSet
+    Friend WithEvents TurnosBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents TurnosTableAdapter As FastCheck.remiseriaDataSetTableAdapters.turnosTableAdapter
+    Friend WithEvents TableAdapterManager As FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager
 End Class

@@ -72,6 +72,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alta\activosEnTurno.Designer.vb">
+      <DependentUpon>activosEnTurno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta\activosEnTurno.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Alta\altaSocio.Designer.vb">
       <DependentUpon>altaSocio.vb</DependentUpon>
     </Compile>
@@ -106,6 +112,12 @@
       <DependentUpon>modificarVehiculo.vb</DependentUpon>
     </Compile>
     <Compile Include="Alta\modificarVehiculo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alta\nuevoTurno.Designer.vb">
+      <DependentUpon>nuevoTurno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta\nuevoTurno.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="conexion.vb" />
@@ -160,6 +172,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Alta\activosEnTurno.resx">
+      <DependentUpon>activosEnTurno.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Alta\altaSocio.resx">
       <DependentUpon>altaSocio.vb</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alta\modificarVehiculo.resx">
       <DependentUpon>modificarVehiculo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alta\nuevoTurno.resx">
+      <DependentUpon>nuevoTurno.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

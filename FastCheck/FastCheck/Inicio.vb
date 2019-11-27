@@ -4,8 +4,10 @@
 
  
     Private Sub Inicio_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'RemiseriaDataSet.turnos' Puede moverla o quitarla según sea necesario.
+        Me.TurnosTableAdapter.Fill(Me.RemiseriaDataSet.turnos)
         diseño()
-
+        Me.TurnosBindingSource.AddNew()
     End Sub
 
     Private Sub diseño()
@@ -58,11 +60,13 @@
     End Sub
 
     Private Sub btnNuevoTurno_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevoTurno.Click
+        openChildForm(New nuevoTurno())
         hideSubMenu()
 
     End Sub
 
     Private Sub btnActivos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActivos.Click
+        openChildForm(New activosEnTurno())
         hideSubMenu()
 
     End Sub
@@ -152,4 +156,19 @@
 
     End Sub
 
+    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+
+    Private Sub TurnosBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Validate()
+        Me.TurnosBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.RemiseriaDataSet)
+
+    End Sub
+
+    Private Sub Panel2_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
 End Class

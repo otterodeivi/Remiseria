@@ -36,3 +36,5 @@ C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.vbpro
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.Inicio.resources
 C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.Inicio.resources
 C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.finalizarViaje.resources
+C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.activosEnTurno.resources
+C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.nuevoTurno.resources
