@@ -47,6 +47,51 @@ Partial Class nuevoTurno
         CType(Me.TurnosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'IdChoferLabel
+        '
+        IdChoferLabel.AutoSize = True
+        IdChoferLabel.Location = New System.Drawing.Point(12, 9)
+        IdChoferLabel.Name = "IdChoferLabel"
+        IdChoferLabel.Size = New System.Drawing.Size(52, 13)
+        IdChoferLabel.TabIndex = 3
+        IdChoferLabel.Text = "id Chofer:"
+        '
+        'IdVehiculoLabel
+        '
+        IdVehiculoLabel.AutoSize = True
+        IdVehiculoLabel.Location = New System.Drawing.Point(12, 35)
+        IdVehiculoLabel.Name = "IdVehiculoLabel"
+        IdVehiculoLabel.Size = New System.Drawing.Size(62, 13)
+        IdVehiculoLabel.TabIndex = 5
+        IdVehiculoLabel.Text = "id Vehiculo:"
+        '
+        'IngresoLabel
+        '
+        IngresoLabel.AutoSize = True
+        IngresoLabel.Location = New System.Drawing.Point(12, 62)
+        IngresoLabel.Name = "IngresoLabel"
+        IngresoLabel.Size = New System.Drawing.Size(44, 13)
+        IngresoLabel.TabIndex = 7
+        IngresoLabel.Text = "ingreso:"
+        '
+        'EgresoLabel
+        '
+        EgresoLabel.AutoSize = True
+        EgresoLabel.Location = New System.Drawing.Point(12, 88)
+        EgresoLabel.Name = "EgresoLabel"
+        EgresoLabel.Size = New System.Drawing.Size(42, 13)
+        EgresoLabel.TabIndex = 9
+        EgresoLabel.Text = "egreso:"
+        '
+        'TurnoLabel
+        '
+        TurnoLabel.AutoSize = True
+        TurnoLabel.Location = New System.Drawing.Point(12, 113)
+        TurnoLabel.Name = "TurnoLabel"
+        TurnoLabel.Size = New System.Drawing.Size(34, 13)
+        TurnoLabel.TabIndex = 11
+        TurnoLabel.Text = "turno:"
+        '
         'RemiseriaDataSet
         '
         Me.RemiseriaDataSet.DataSetName = "remiseriaDataSet"
@@ -74,94 +119,49 @@ Partial Class nuevoTurno
         Me.TableAdapterManager.vehiculoTableAdapter = Nothing
         Me.TableAdapterManager.viajesTableAdapter = Nothing
         '
-        'IdChoferLabel
-        '
-        IdChoferLabel.AutoSize = True
-        IdChoferLabel.Location = New System.Drawing.Point(32, 28)
-        IdChoferLabel.Name = "IdChoferLabel"
-        IdChoferLabel.Size = New System.Drawing.Size(52, 13)
-        IdChoferLabel.TabIndex = 3
-        IdChoferLabel.Text = "id Chofer:"
-        '
         'IdChoferTextBox
         '
         Me.IdChoferTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TurnosBindingSource, "idChofer", True))
-        Me.IdChoferTextBox.Location = New System.Drawing.Point(100, 25)
+        Me.IdChoferTextBox.Location = New System.Drawing.Point(80, 6)
         Me.IdChoferTextBox.Name = "IdChoferTextBox"
         Me.IdChoferTextBox.Size = New System.Drawing.Size(200, 20)
         Me.IdChoferTextBox.TabIndex = 4
         '
-        'IdVehiculoLabel
-        '
-        IdVehiculoLabel.AutoSize = True
-        IdVehiculoLabel.Location = New System.Drawing.Point(32, 54)
-        IdVehiculoLabel.Name = "IdVehiculoLabel"
-        IdVehiculoLabel.Size = New System.Drawing.Size(62, 13)
-        IdVehiculoLabel.TabIndex = 5
-        IdVehiculoLabel.Text = "id Vehiculo:"
-        '
         'IdVehiculoTextBox
         '
         Me.IdVehiculoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TurnosBindingSource, "idVehiculo", True))
-        Me.IdVehiculoTextBox.Location = New System.Drawing.Point(100, 51)
+        Me.IdVehiculoTextBox.Location = New System.Drawing.Point(80, 32)
         Me.IdVehiculoTextBox.Name = "IdVehiculoTextBox"
         Me.IdVehiculoTextBox.Size = New System.Drawing.Size(200, 20)
         Me.IdVehiculoTextBox.TabIndex = 6
         '
-        'IngresoLabel
-        '
-        IngresoLabel.AutoSize = True
-        IngresoLabel.Location = New System.Drawing.Point(32, 81)
-        IngresoLabel.Name = "IngresoLabel"
-        IngresoLabel.Size = New System.Drawing.Size(44, 13)
-        IngresoLabel.TabIndex = 7
-        IngresoLabel.Text = "ingreso:"
-        '
         'IngresoDateTimePicker
         '
         Me.IngresoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.TurnosBindingSource, "ingreso", True))
-        Me.IngresoDateTimePicker.Location = New System.Drawing.Point(100, 77)
+        Me.IngresoDateTimePicker.Location = New System.Drawing.Point(80, 58)
         Me.IngresoDateTimePicker.Name = "IngresoDateTimePicker"
         Me.IngresoDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.IngresoDateTimePicker.TabIndex = 8
         '
-        'EgresoLabel
-        '
-        EgresoLabel.AutoSize = True
-        EgresoLabel.Location = New System.Drawing.Point(32, 107)
-        EgresoLabel.Name = "EgresoLabel"
-        EgresoLabel.Size = New System.Drawing.Size(42, 13)
-        EgresoLabel.TabIndex = 9
-        EgresoLabel.Text = "egreso:"
-        '
         'EgresoDateTimePicker
         '
         Me.EgresoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.TurnosBindingSource, "egreso", True))
-        Me.EgresoDateTimePicker.Location = New System.Drawing.Point(100, 103)
+        Me.EgresoDateTimePicker.Location = New System.Drawing.Point(80, 84)
         Me.EgresoDateTimePicker.Name = "EgresoDateTimePicker"
         Me.EgresoDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.EgresoDateTimePicker.TabIndex = 10
         '
-        'TurnoLabel
-        '
-        TurnoLabel.AutoSize = True
-        TurnoLabel.Location = New System.Drawing.Point(32, 132)
-        TurnoLabel.Name = "TurnoLabel"
-        TurnoLabel.Size = New System.Drawing.Size(34, 13)
-        TurnoLabel.TabIndex = 11
-        TurnoLabel.Text = "turno:"
-        '
         'TurnoTextBox
         '
         Me.TurnoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TurnosBindingSource, "turno", True))
-        Me.TurnoTextBox.Location = New System.Drawing.Point(100, 129)
+        Me.TurnoTextBox.Location = New System.Drawing.Point(80, 110)
         Me.TurnoTextBox.Name = "TurnoTextBox"
         Me.TurnoTextBox.Size = New System.Drawing.Size(200, 20)
         Me.TurnoTextBox.TabIndex = 12
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(100, 171)
+        Me.Button1.Location = New System.Drawing.Point(80, 152)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(77, 24)
         Me.Button1.TabIndex = 15
@@ -172,7 +172,7 @@ Partial Class nuevoTurno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(326, 261)
+        Me.ClientSize = New System.Drawing.Size(291, 187)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(IdChoferLabel)
         Me.Controls.Add(Me.IdChoferTextBox)

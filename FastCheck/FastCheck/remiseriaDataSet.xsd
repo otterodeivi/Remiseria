@@ -700,6 +700,50 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="enCursoTableAdapter" GeneratorDataComponentClassName="enCursoTableAdapter" Name="enCurso" UserDataComponentName="enCursoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="remiseriaConnectionString (MySettings)" DbObjectName="Remiseria.dbo.enCurso" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT registro, idChofer, idSocio, fecha_origen, origen, destino, estado FROM dbo.enCurso</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="registro" DataSetColumn="registro" />
+              <Mapping SourceColumn="idChofer" DataSetColumn="idChofer" />
+              <Mapping SourceColumn="idSocio" DataSetColumn="idSocio" />
+              <Mapping SourceColumn="fecha_origen" DataSetColumn="fecha_origen" />
+              <Mapping SourceColumn="origen" DataSetColumn="origen" />
+              <Mapping SourceColumn="destino" DataSetColumn="destino" />
+              <Mapping SourceColumn="estado" DataSetColumn="estado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="reservaTableAdapter" GeneratorDataComponentClassName="reservaTableAdapter" Name="reserva" UserDataComponentName="reservaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="remiseriaConnectionString (MySettings)" DbObjectName="Remiseria.dbo.reserva" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT registro, idChofer, idSocio, fecha_origen, origen, destino, estado FROM dbo.reserva</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="registro" DataSetColumn="registro" />
+              <Mapping SourceColumn="idChofer" DataSetColumn="idChofer" />
+              <Mapping SourceColumn="idSocio" DataSetColumn="idSocio" />
+              <Mapping SourceColumn="fecha_origen" DataSetColumn="fecha_origen" />
+              <Mapping SourceColumn="origen" DataSetColumn="origen" />
+              <Mapping SourceColumn="destino" DataSetColumn="destino" />
+              <Mapping SourceColumn="estado" DataSetColumn="estado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="remiseriaConnectionString (MySettings)" DbObjectName="remiseria.dbo.altaChofer" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="altaChofer" MethodsParameterType="CLR" Modifier="Public" Name="altaChofer" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="altaChofer">
@@ -750,6 +794,25 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
               </DbCommand>
             </SelectCommand>
           </DbSource>
+          <DbSource ConnectionRef="remiseriaConnectionString (MySettings)" DbObjectName="Remiseria.dbo.nuevoViaje" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="nuevoViaje" MethodsParameterType="CLR" Modifier="Public" Name="nuevoViaje" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="nuevoViaje">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.nuevoViaje</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idChofer" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idSocio" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idVehiculo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fecha" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@origen" Precision="0" ProviderType="VarChar" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@destino" Precision="0" ProviderType="VarChar" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@reserva" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@cta" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@estado" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
         </Sources>
       </DataSource>
     </xs:appinfo>
@@ -757,7 +820,7 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
   <xs:element name="remiseriaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="remiseriaDataSet" msprop:Generator_UserDSName="remiseriaDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="chofer" msprop:Generator_TableClassName="choferDataTable" msprop:Generator_TableVarName="tablechofer" msprop:Generator_TablePropName="chofer" msprop:Generator_RowDeletingName="choferRowDeleting" msprop:Generator_RowChangingName="choferRowChanging" msprop:Generator_RowEvHandlerName="choferRowChangeEventHandler" msprop:Generator_RowDeletedName="choferRowDeleted" msprop:Generator_UserTableName="chofer" msprop:Generator_RowChangedName="choferRowChanged" msprop:Generator_RowEvArgName="choferRowChangeEvent" msprop:Generator_RowClassName="choferRow">
+        <xs:element name="chofer" msprop:Generator_TableClassName="choferDataTable" msprop:Generator_TableVarName="tablechofer" msprop:Generator_RowChangedName="choferRowChanged" msprop:Generator_TablePropName="chofer" msprop:Generator_RowDeletingName="choferRowDeleting" msprop:Generator_RowChangingName="choferRowChanging" msprop:Generator_RowEvHandlerName="choferRowChangeEventHandler" msprop:Generator_RowDeletedName="choferRowDeleted" msprop:Generator_RowClassName="choferRow" msprop:Generator_UserTableName="chofer" msprop:Generator_RowEvArgName="choferRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idChofer" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidChofer" msprop:Generator_ColumnPropNameInRow="idChofer" msprop:Generator_ColumnPropNameInTable="idChoferColumn" msprop:Generator_UserColumnName="idChofer" type="xs:int" />
@@ -787,7 +850,7 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="liqCtaCte" msprop:Generator_TableClassName="liqCtaCteDataTable" msprop:Generator_TableVarName="tableliqCtaCte" msprop:Generator_TablePropName="liqCtaCte" msprop:Generator_RowDeletingName="liqCtaCteRowDeleting" msprop:Generator_RowChangingName="liqCtaCteRowChanging" msprop:Generator_RowEvHandlerName="liqCtaCteRowChangeEventHandler" msprop:Generator_RowDeletedName="liqCtaCteRowDeleted" msprop:Generator_UserTableName="liqCtaCte" msprop:Generator_RowChangedName="liqCtaCteRowChanged" msprop:Generator_RowEvArgName="liqCtaCteRowChangeEvent" msprop:Generator_RowClassName="liqCtaCteRow">
+        <xs:element name="liqCtaCte" msprop:Generator_TableClassName="liqCtaCteDataTable" msprop:Generator_TableVarName="tableliqCtaCte" msprop:Generator_RowChangedName="liqCtaCteRowChanged" msprop:Generator_TablePropName="liqCtaCte" msprop:Generator_RowDeletingName="liqCtaCteRowDeleting" msprop:Generator_RowChangingName="liqCtaCteRowChanging" msprop:Generator_RowEvHandlerName="liqCtaCteRowChangeEventHandler" msprop:Generator_RowDeletedName="liqCtaCteRowDeleted" msprop:Generator_RowClassName="liqCtaCteRow" msprop:Generator_UserTableName="liqCtaCte" msprop:Generator_RowEvArgName="liqCtaCteRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="registro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnregistro" msprop:Generator_ColumnPropNameInRow="registro" msprop:Generator_ColumnPropNameInTable="registroColumn" msprop:Generator_UserColumnName="registro" type="xs:int" />
@@ -798,7 +861,7 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="resumenRemiseria" msprop:Generator_TableClassName="resumenRemiseriaDataTable" msprop:Generator_TableVarName="tableresumenRemiseria" msprop:Generator_TablePropName="resumenRemiseria" msprop:Generator_RowDeletingName="resumenRemiseriaRowDeleting" msprop:Generator_RowChangingName="resumenRemiseriaRowChanging" msprop:Generator_RowEvHandlerName="resumenRemiseriaRowChangeEventHandler" msprop:Generator_RowDeletedName="resumenRemiseriaRowDeleted" msprop:Generator_UserTableName="resumenRemiseria" msprop:Generator_RowChangedName="resumenRemiseriaRowChanged" msprop:Generator_RowEvArgName="resumenRemiseriaRowChangeEvent" msprop:Generator_RowClassName="resumenRemiseriaRow">
+        <xs:element name="resumenRemiseria" msprop:Generator_TableClassName="resumenRemiseriaDataTable" msprop:Generator_TableVarName="tableresumenRemiseria" msprop:Generator_RowChangedName="resumenRemiseriaRowChanged" msprop:Generator_TablePropName="resumenRemiseria" msprop:Generator_RowDeletingName="resumenRemiseriaRowDeleting" msprop:Generator_RowChangingName="resumenRemiseriaRowChanging" msprop:Generator_RowEvHandlerName="resumenRemiseriaRowChangeEventHandler" msprop:Generator_RowDeletedName="resumenRemiseriaRowDeleted" msprop:Generator_RowClassName="resumenRemiseriaRow" msprop:Generator_UserTableName="resumenRemiseria" msprop:Generator_RowEvArgName="resumenRemiseriaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="registro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnregistro" msprop:Generator_ColumnPropNameInRow="registro" msprop:Generator_ColumnPropNameInTable="registroColumn" msprop:Generator_UserColumnName="registro" type="xs:int" />
@@ -807,7 +870,7 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="socios" msprop:Generator_TableClassName="sociosDataTable" msprop:Generator_TableVarName="tablesocios" msprop:Generator_TablePropName="socios" msprop:Generator_RowDeletingName="sociosRowDeleting" msprop:Generator_RowChangingName="sociosRowChanging" msprop:Generator_RowEvHandlerName="sociosRowChangeEventHandler" msprop:Generator_RowDeletedName="sociosRowDeleted" msprop:Generator_UserTableName="socios" msprop:Generator_RowChangedName="sociosRowChanged" msprop:Generator_RowEvArgName="sociosRowChangeEvent" msprop:Generator_RowClassName="sociosRow">
+        <xs:element name="socios" msprop:Generator_TableClassName="sociosDataTable" msprop:Generator_TableVarName="tablesocios" msprop:Generator_RowChangedName="sociosRowChanged" msprop:Generator_TablePropName="socios" msprop:Generator_RowDeletingName="sociosRowDeleting" msprop:Generator_RowChangingName="sociosRowChanging" msprop:Generator_RowEvHandlerName="sociosRowChangeEventHandler" msprop:Generator_RowDeletedName="sociosRowDeleted" msprop:Generator_RowClassName="sociosRow" msprop:Generator_UserTableName="socios" msprop:Generator_RowEvArgName="sociosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idSocio" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidSocio" msprop:Generator_ColumnPropNameInRow="idSocio" msprop:Generator_ColumnPropNameInTable="idSocioColumn" msprop:Generator_UserColumnName="idSocio" type="xs:int" />
@@ -836,7 +899,7 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="turnos" msprop:Generator_TableClassName="turnosDataTable" msprop:Generator_TableVarName="tableturnos" msprop:Generator_TablePropName="turnos" msprop:Generator_RowDeletingName="turnosRowDeleting" msprop:Generator_RowChangingName="turnosRowChanging" msprop:Generator_RowEvHandlerName="turnosRowChangeEventHandler" msprop:Generator_RowDeletedName="turnosRowDeleted" msprop:Generator_UserTableName="turnos" msprop:Generator_RowChangedName="turnosRowChanged" msprop:Generator_RowEvArgName="turnosRowChangeEvent" msprop:Generator_RowClassName="turnosRow">
+        <xs:element name="turnos" msprop:Generator_TableClassName="turnosDataTable" msprop:Generator_TableVarName="tableturnos" msprop:Generator_RowChangedName="turnosRowChanged" msprop:Generator_TablePropName="turnos" msprop:Generator_RowDeletingName="turnosRowDeleting" msprop:Generator_RowChangingName="turnosRowChanging" msprop:Generator_RowEvHandlerName="turnosRowChangeEventHandler" msprop:Generator_RowDeletedName="turnosRowDeleted" msprop:Generator_RowClassName="turnosRow" msprop:Generator_UserTableName="turnos" msprop:Generator_RowEvArgName="turnosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idTurno" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidTurno" msprop:Generator_ColumnPropNameInRow="idTurno" msprop:Generator_ColumnPropNameInTable="idTurnoColumn" msprop:Generator_UserColumnName="idTurno" type="xs:int" />
@@ -855,7 +918,7 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="valores" msprop:Generator_TableClassName="valoresDataTable" msprop:Generator_TableVarName="tablevalores" msprop:Generator_TablePropName="valores" msprop:Generator_RowDeletingName="valoresRowDeleting" msprop:Generator_RowChangingName="valoresRowChanging" msprop:Generator_RowEvHandlerName="valoresRowChangeEventHandler" msprop:Generator_RowDeletedName="valoresRowDeleted" msprop:Generator_UserTableName="valores" msprop:Generator_RowChangedName="valoresRowChanged" msprop:Generator_RowEvArgName="valoresRowChangeEvent" msprop:Generator_RowClassName="valoresRow">
+        <xs:element name="valores" msprop:Generator_TableClassName="valoresDataTable" msprop:Generator_TableVarName="tablevalores" msprop:Generator_RowChangedName="valoresRowChanged" msprop:Generator_TablePropName="valores" msprop:Generator_RowDeletingName="valoresRowDeleting" msprop:Generator_RowChangingName="valoresRowChanging" msprop:Generator_RowEvHandlerName="valoresRowChangeEventHandler" msprop:Generator_RowDeletedName="valoresRowDeleted" msprop:Generator_RowClassName="valoresRow" msprop:Generator_UserTableName="valores" msprop:Generator_RowEvArgName="valoresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -866,7 +929,7 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vehiculo" msprop:Generator_TableClassName="vehiculoDataTable" msprop:Generator_TableVarName="tablevehiculo" msprop:Generator_TablePropName="vehiculo" msprop:Generator_RowDeletingName="vehiculoRowDeleting" msprop:Generator_RowChangingName="vehiculoRowChanging" msprop:Generator_RowEvHandlerName="vehiculoRowChangeEventHandler" msprop:Generator_RowDeletedName="vehiculoRowDeleted" msprop:Generator_UserTableName="vehiculo" msprop:Generator_RowChangedName="vehiculoRowChanged" msprop:Generator_RowEvArgName="vehiculoRowChangeEvent" msprop:Generator_RowClassName="vehiculoRow">
+        <xs:element name="vehiculo" msprop:Generator_TableClassName="vehiculoDataTable" msprop:Generator_TableVarName="tablevehiculo" msprop:Generator_RowChangedName="vehiculoRowChanged" msprop:Generator_TablePropName="vehiculo" msprop:Generator_RowDeletingName="vehiculoRowDeleting" msprop:Generator_RowChangingName="vehiculoRowChanging" msprop:Generator_RowEvHandlerName="vehiculoRowChangeEventHandler" msprop:Generator_RowDeletedName="vehiculoRowDeleted" msprop:Generator_RowClassName="vehiculoRow" msprop:Generator_UserTableName="vehiculo" msprop:Generator_RowEvArgName="vehiculoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idVehiculo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidVehiculo" msprop:Generator_ColumnPropNameInRow="idVehiculo" msprop:Generator_ColumnPropNameInTable="idVehiculoColumn" msprop:Generator_UserColumnName="idVehiculo" type="xs:int" />
@@ -918,7 +981,7 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="viajes" msprop:Generator_TableClassName="viajesDataTable" msprop:Generator_TableVarName="tableviajes" msprop:Generator_TablePropName="viajes" msprop:Generator_RowDeletingName="viajesRowDeleting" msprop:Generator_RowChangingName="viajesRowChanging" msprop:Generator_RowEvHandlerName="viajesRowChangeEventHandler" msprop:Generator_RowDeletedName="viajesRowDeleted" msprop:Generator_UserTableName="viajes" msprop:Generator_RowChangedName="viajesRowChanged" msprop:Generator_RowEvArgName="viajesRowChangeEvent" msprop:Generator_RowClassName="viajesRow">
+        <xs:element name="viajes" msprop:Generator_TableClassName="viajesDataTable" msprop:Generator_TableVarName="tableviajes" msprop:Generator_RowChangedName="viajesRowChanged" msprop:Generator_TablePropName="viajes" msprop:Generator_RowDeletingName="viajesRowDeleting" msprop:Generator_RowChangingName="viajesRowChanging" msprop:Generator_RowEvHandlerName="viajesRowChangeEventHandler" msprop:Generator_RowDeletedName="viajesRowDeleted" msprop:Generator_RowClassName="viajesRow" msprop:Generator_UserTableName="viajes" msprop:Generator_RowEvArgName="viajesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="registro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnregistro" msprop:Generator_ColumnPropNameInRow="registro" msprop:Generator_ColumnPropNameInTable="registroColumn" msprop:Generator_UserColumnName="registro" type="xs:int" />
@@ -944,6 +1007,68 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
               </xs:element>
               <xs:element name="reserva" msprop:Generator_ColumnVarNameInTable="columnreserva" msprop:Generator_ColumnPropNameInRow="reserva" msprop:Generator_ColumnPropNameInTable="reservaColumn" msprop:Generator_UserColumnName="reserva" type="xs:boolean" minOccurs="0" />
               <xs:element name="cta_cte" msprop:Generator_ColumnVarNameInTable="columncta_cte" msprop:Generator_ColumnPropNameInRow="cta_cte" msprop:Generator_ColumnPropNameInTable="cta_cteColumn" msprop:Generator_UserColumnName="cta_cte" type="xs:boolean" minOccurs="0" />
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="enCurso" msprop:Generator_TableClassName="enCursoDataTable" msprop:Generator_TableVarName="tableenCurso" msprop:Generator_TablePropName="enCurso" msprop:Generator_RowDeletingName="enCursoRowDeleting" msprop:Generator_RowChangingName="enCursoRowChanging" msprop:Generator_RowEvHandlerName="enCursoRowChangeEventHandler" msprop:Generator_RowDeletedName="enCursoRowDeleted" msprop:Generator_UserTableName="enCurso" msprop:Generator_RowChangedName="enCursoRowChanged" msprop:Generator_RowEvArgName="enCursoRowChangeEvent" msprop:Generator_RowClassName="enCursoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="registro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnregistro" msprop:Generator_ColumnPropNameInRow="registro" msprop:Generator_ColumnPropNameInTable="registroColumn" msprop:Generator_UserColumnName="registro" type="xs:int" />
+              <xs:element name="idChofer" msprop:Generator_ColumnVarNameInTable="columnidChofer" msprop:Generator_ColumnPropNameInRow="idChofer" msprop:Generator_ColumnPropNameInTable="idChoferColumn" msprop:Generator_UserColumnName="idChofer" type="xs:int" minOccurs="0" />
+              <xs:element name="idSocio" msprop:Generator_ColumnVarNameInTable="columnidSocio" msprop:Generator_ColumnPropNameInRow="idSocio" msprop:Generator_ColumnPropNameInTable="idSocioColumn" msprop:Generator_UserColumnName="idSocio" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_origen" msprop:Generator_ColumnVarNameInTable="columnfecha_origen" msprop:Generator_ColumnPropNameInRow="fecha_origen" msprop:Generator_ColumnPropNameInTable="fecha_origenColumn" msprop:Generator_UserColumnName="fecha_origen" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="origen" msprop:Generator_ColumnVarNameInTable="columnorigen" msprop:Generator_ColumnPropNameInRow="origen" msprop:Generator_ColumnPropNameInTable="origenColumn" msprop:Generator_UserColumnName="origen" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="destino" msprop:Generator_ColumnVarNameInTable="columndestino" msprop:Generator_ColumnPropNameInRow="destino" msprop:Generator_ColumnPropNameInTable="destinoColumn" msprop:Generator_UserColumnName="destino" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="reserva" msprop:Generator_TableClassName="reservaDataTable" msprop:Generator_TableVarName="tablereserva" msprop:Generator_TablePropName="reserva" msprop:Generator_RowDeletingName="reservaRowDeleting" msprop:Generator_RowChangingName="reservaRowChanging" msprop:Generator_RowEvHandlerName="reservaRowChangeEventHandler" msprop:Generator_RowDeletedName="reservaRowDeleted" msprop:Generator_UserTableName="reserva" msprop:Generator_RowChangedName="reservaRowChanged" msprop:Generator_RowEvArgName="reservaRowChangeEvent" msprop:Generator_RowClassName="reservaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="registro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnregistro" msprop:Generator_ColumnPropNameInRow="registro" msprop:Generator_ColumnPropNameInTable="registroColumn" msprop:Generator_UserColumnName="registro" type="xs:int" />
+              <xs:element name="idChofer" msprop:Generator_ColumnVarNameInTable="columnidChofer" msprop:Generator_ColumnPropNameInRow="idChofer" msprop:Generator_ColumnPropNameInTable="idChoferColumn" msprop:Generator_UserColumnName="idChofer" type="xs:int" minOccurs="0" />
+              <xs:element name="idSocio" msprop:Generator_ColumnVarNameInTable="columnidSocio" msprop:Generator_ColumnPropNameInRow="idSocio" msprop:Generator_ColumnPropNameInTable="idSocioColumn" msprop:Generator_UserColumnName="idSocio" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_origen" msprop:Generator_ColumnVarNameInTable="columnfecha_origen" msprop:Generator_ColumnPropNameInRow="fecha_origen" msprop:Generator_ColumnPropNameInTable="fecha_origenColumn" msprop:Generator_UserColumnName="fecha_origen" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="origen" msprop:Generator_ColumnVarNameInTable="columnorigen" msprop:Generator_ColumnPropNameInRow="origen" msprop:Generator_ColumnPropNameInTable="origenColumn" msprop:Generator_UserColumnName="origen" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="destino" msprop:Generator_ColumnVarNameInTable="columndestino" msprop:Generator_ColumnPropNameInRow="destino" msprop:Generator_ColumnPropNameInTable="destinoColumn" msprop:Generator_UserColumnName="destino" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -986,6 +1111,14 @@ SELECT registro, idChofer, idSocio, idVehiculo, fecha_origen, fecha_destino, tot
     </xs:unique>
     <xs:unique name="viajes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:viajes" />
+      <xs:field xpath="mstns:registro" />
+    </xs:unique>
+    <xs:unique name="enCurso_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:enCurso" />
+      <xs:field xpath="mstns:registro" />
+    </xs:unique>
+    <xs:unique name="reserva_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:reserva" />
       <xs:field xpath="mstns:registro" />
     </xs:unique>
   </xs:element>

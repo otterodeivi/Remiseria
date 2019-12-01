@@ -125,7 +125,7 @@ Partial Class activosEnTurno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(843, 337)
+        Me.ClientSize = New System.Drawing.Size(769, 249)
         Me.Controls.Add(Me.TurnosDataGridView)
         Me.Name = "activosEnTurno"
         Me.Text = "activosEnTurno"

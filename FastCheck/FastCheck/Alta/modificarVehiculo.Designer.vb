@@ -76,9 +76,99 @@ Partial Class modificarVehiculo
         CType(Me.VehiculoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'IdVehiculoLabel
+        '
+        IdVehiculoLabel.AutoSize = True
+        IdVehiculoLabel.Location = New System.Drawing.Point(12, 9)
+        IdVehiculoLabel.Name = "IdVehiculoLabel"
+        IdVehiculoLabel.Size = New System.Drawing.Size(62, 13)
+        IdVehiculoLabel.TabIndex = 19
+        IdVehiculoLabel.Text = "id Vehiculo:"
+        '
+        'DuenioLabel
+        '
+        DuenioLabel.AutoSize = True
+        DuenioLabel.Location = New System.Drawing.Point(12, 35)
+        DuenioLabel.Name = "DuenioLabel"
+        DuenioLabel.Size = New System.Drawing.Size(42, 13)
+        DuenioLabel.TabIndex = 21
+        DuenioLabel.Text = "duenio:"
+        '
+        'ModeloLabel
+        '
+        ModeloLabel.AutoSize = True
+        ModeloLabel.Location = New System.Drawing.Point(12, 61)
+        ModeloLabel.Name = "ModeloLabel"
+        ModeloLabel.Size = New System.Drawing.Size(44, 13)
+        ModeloLabel.TabIndex = 23
+        ModeloLabel.Text = "modelo:"
+        '
+        'MarcaLabel
+        '
+        MarcaLabel.AutoSize = True
+        MarcaLabel.Location = New System.Drawing.Point(12, 87)
+        MarcaLabel.Name = "MarcaLabel"
+        MarcaLabel.Size = New System.Drawing.Size(39, 13)
+        MarcaLabel.TabIndex = 25
+        MarcaLabel.Text = "marca:"
+        '
+        'ColorLabel
+        '
+        ColorLabel.AutoSize = True
+        ColorLabel.Location = New System.Drawing.Point(12, 113)
+        ColorLabel.Name = "ColorLabel"
+        ColorLabel.Size = New System.Drawing.Size(33, 13)
+        ColorLabel.TabIndex = 27
+        ColorLabel.Text = "color:"
+        '
+        'AnioLabel
+        '
+        AnioLabel.AutoSize = True
+        AnioLabel.Location = New System.Drawing.Point(12, 140)
+        AnioLabel.Name = "AnioLabel"
+        AnioLabel.Size = New System.Drawing.Size(30, 13)
+        AnioLabel.TabIndex = 29
+        AnioLabel.Text = "anio:"
+        '
+        'DominioLabel
+        '
+        DominioLabel.AutoSize = True
+        DominioLabel.Location = New System.Drawing.Point(12, 165)
+        DominioLabel.Name = "DominioLabel"
+        DominioLabel.Size = New System.Drawing.Size(46, 13)
+        DominioLabel.TabIndex = 31
+        DominioLabel.Text = "dominio:"
+        '
+        'SeguroLabel
+        '
+        SeguroLabel.AutoSize = True
+        SeguroLabel.Location = New System.Drawing.Point(12, 191)
+        SeguroLabel.Name = "SeguroLabel"
+        SeguroLabel.Size = New System.Drawing.Size(42, 13)
+        SeguroLabel.TabIndex = 33
+        SeguroLabel.Text = "seguro:"
+        '
+        'Venc_gncLabel
+        '
+        Venc_gncLabel.AutoSize = True
+        Venc_gncLabel.Location = New System.Drawing.Point(12, 218)
+        Venc_gncLabel.Name = "Venc_gncLabel"
+        Venc_gncLabel.Size = New System.Drawing.Size(55, 13)
+        Venc_gncLabel.TabIndex = 35
+        Venc_gncLabel.Text = "venc gnc:"
+        '
+        'Venc_vtvLabel
+        '
+        Venc_vtvLabel.AutoSize = True
+        Venc_vtvLabel.Location = New System.Drawing.Point(12, 244)
+        Venc_vtvLabel.Name = "Venc_vtvLabel"
+        Venc_vtvLabel.Size = New System.Drawing.Size(52, 13)
+        Venc_vtvLabel.TabIndex = 37
+        Venc_vtvLabel.Text = "venc vtv:"
+        '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(122, 348)
+        Me.Button3.Location = New System.Drawing.Point(108, 326)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 18
@@ -87,7 +177,7 @@ Partial Class modificarVehiculo
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(183, 309)
+        Me.Button2.Location = New System.Drawing.Point(169, 287)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 17
@@ -96,7 +186,7 @@ Partial Class modificarVehiculo
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(63, 309)
+        Me.Button1.Location = New System.Drawing.Point(49, 287)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 16
@@ -130,172 +220,82 @@ Partial Class modificarVehiculo
         Me.TableAdapterManager.vehiculoTableAdapter = Me.VehiculoTableAdapter
         Me.TableAdapterManager.viajesTableAdapter = Nothing
         '
-        'IdVehiculoLabel
-        '
-        IdVehiculoLabel.AutoSize = True
-        IdVehiculoLabel.Location = New System.Drawing.Point(26, 31)
-        IdVehiculoLabel.Name = "IdVehiculoLabel"
-        IdVehiculoLabel.Size = New System.Drawing.Size(62, 13)
-        IdVehiculoLabel.TabIndex = 19
-        IdVehiculoLabel.Text = "id Vehiculo:"
-        '
         'IdVehiculoTextBox
         '
         Me.IdVehiculoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "idVehiculo", True))
-        Me.IdVehiculoTextBox.Location = New System.Drawing.Point(94, 28)
+        Me.IdVehiculoTextBox.Location = New System.Drawing.Point(80, 6)
         Me.IdVehiculoTextBox.Name = "IdVehiculoTextBox"
         Me.IdVehiculoTextBox.Size = New System.Drawing.Size(200, 20)
         Me.IdVehiculoTextBox.TabIndex = 20
         '
-        'DuenioLabel
-        '
-        DuenioLabel.AutoSize = True
-        DuenioLabel.Location = New System.Drawing.Point(26, 57)
-        DuenioLabel.Name = "DuenioLabel"
-        DuenioLabel.Size = New System.Drawing.Size(42, 13)
-        DuenioLabel.TabIndex = 21
-        DuenioLabel.Text = "duenio:"
-        '
         'DuenioTextBox
         '
         Me.DuenioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "duenio", True))
-        Me.DuenioTextBox.Location = New System.Drawing.Point(94, 54)
+        Me.DuenioTextBox.Location = New System.Drawing.Point(80, 32)
         Me.DuenioTextBox.Name = "DuenioTextBox"
         Me.DuenioTextBox.Size = New System.Drawing.Size(200, 20)
         Me.DuenioTextBox.TabIndex = 22
         '
-        'ModeloLabel
-        '
-        ModeloLabel.AutoSize = True
-        ModeloLabel.Location = New System.Drawing.Point(26, 83)
-        ModeloLabel.Name = "ModeloLabel"
-        ModeloLabel.Size = New System.Drawing.Size(44, 13)
-        ModeloLabel.TabIndex = 23
-        ModeloLabel.Text = "modelo:"
-        '
         'ModeloTextBox
         '
         Me.ModeloTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "modelo", True))
-        Me.ModeloTextBox.Location = New System.Drawing.Point(94, 80)
+        Me.ModeloTextBox.Location = New System.Drawing.Point(80, 58)
         Me.ModeloTextBox.Name = "ModeloTextBox"
         Me.ModeloTextBox.Size = New System.Drawing.Size(200, 20)
         Me.ModeloTextBox.TabIndex = 24
         '
-        'MarcaLabel
-        '
-        MarcaLabel.AutoSize = True
-        MarcaLabel.Location = New System.Drawing.Point(26, 109)
-        MarcaLabel.Name = "MarcaLabel"
-        MarcaLabel.Size = New System.Drawing.Size(39, 13)
-        MarcaLabel.TabIndex = 25
-        MarcaLabel.Text = "marca:"
-        '
         'MarcaTextBox
         '
         Me.MarcaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "marca", True))
-        Me.MarcaTextBox.Location = New System.Drawing.Point(94, 106)
+        Me.MarcaTextBox.Location = New System.Drawing.Point(80, 84)
         Me.MarcaTextBox.Name = "MarcaTextBox"
         Me.MarcaTextBox.Size = New System.Drawing.Size(200, 20)
         Me.MarcaTextBox.TabIndex = 26
         '
-        'ColorLabel
-        '
-        ColorLabel.AutoSize = True
-        ColorLabel.Location = New System.Drawing.Point(26, 135)
-        ColorLabel.Name = "ColorLabel"
-        ColorLabel.Size = New System.Drawing.Size(33, 13)
-        ColorLabel.TabIndex = 27
-        ColorLabel.Text = "color:"
-        '
         'ColorTextBox
         '
         Me.ColorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "color", True))
-        Me.ColorTextBox.Location = New System.Drawing.Point(94, 132)
+        Me.ColorTextBox.Location = New System.Drawing.Point(80, 110)
         Me.ColorTextBox.Name = "ColorTextBox"
         Me.ColorTextBox.Size = New System.Drawing.Size(200, 20)
         Me.ColorTextBox.TabIndex = 28
         '
-        'AnioLabel
-        '
-        AnioLabel.AutoSize = True
-        AnioLabel.Location = New System.Drawing.Point(26, 162)
-        AnioLabel.Name = "AnioLabel"
-        AnioLabel.Size = New System.Drawing.Size(30, 13)
-        AnioLabel.TabIndex = 29
-        AnioLabel.Text = "anio:"
-        '
         'AnioDateTimePicker
         '
         Me.AnioDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.VehiculoBindingSource, "anio", True))
-        Me.AnioDateTimePicker.Location = New System.Drawing.Point(94, 158)
+        Me.AnioDateTimePicker.Location = New System.Drawing.Point(80, 136)
         Me.AnioDateTimePicker.Name = "AnioDateTimePicker"
         Me.AnioDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.AnioDateTimePicker.TabIndex = 30
         '
-        'DominioLabel
-        '
-        DominioLabel.AutoSize = True
-        DominioLabel.Location = New System.Drawing.Point(26, 187)
-        DominioLabel.Name = "DominioLabel"
-        DominioLabel.Size = New System.Drawing.Size(46, 13)
-        DominioLabel.TabIndex = 31
-        DominioLabel.Text = "dominio:"
-        '
         'DominioTextBox
         '
         Me.DominioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "dominio", True))
-        Me.DominioTextBox.Location = New System.Drawing.Point(94, 184)
+        Me.DominioTextBox.Location = New System.Drawing.Point(80, 162)
         Me.DominioTextBox.Name = "DominioTextBox"
         Me.DominioTextBox.Size = New System.Drawing.Size(200, 20)
         Me.DominioTextBox.TabIndex = 32
         '
-        'SeguroLabel
-        '
-        SeguroLabel.AutoSize = True
-        SeguroLabel.Location = New System.Drawing.Point(26, 213)
-        SeguroLabel.Name = "SeguroLabel"
-        SeguroLabel.Size = New System.Drawing.Size(42, 13)
-        SeguroLabel.TabIndex = 33
-        SeguroLabel.Text = "seguro:"
-        '
         'SeguroTextBox
         '
         Me.SeguroTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "seguro", True))
-        Me.SeguroTextBox.Location = New System.Drawing.Point(94, 210)
+        Me.SeguroTextBox.Location = New System.Drawing.Point(80, 188)
         Me.SeguroTextBox.Name = "SeguroTextBox"
         Me.SeguroTextBox.Size = New System.Drawing.Size(200, 20)
         Me.SeguroTextBox.TabIndex = 34
         '
-        'Venc_gncLabel
-        '
-        Venc_gncLabel.AutoSize = True
-        Venc_gncLabel.Location = New System.Drawing.Point(26, 240)
-        Venc_gncLabel.Name = "Venc_gncLabel"
-        Venc_gncLabel.Size = New System.Drawing.Size(55, 13)
-        Venc_gncLabel.TabIndex = 35
-        Venc_gncLabel.Text = "venc gnc:"
-        '
         'Venc_gncDateTimePicker
         '
         Me.Venc_gncDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.VehiculoBindingSource, "venc_gnc", True))
-        Me.Venc_gncDateTimePicker.Location = New System.Drawing.Point(94, 236)
+        Me.Venc_gncDateTimePicker.Location = New System.Drawing.Point(80, 214)
         Me.Venc_gncDateTimePicker.Name = "Venc_gncDateTimePicker"
         Me.Venc_gncDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.Venc_gncDateTimePicker.TabIndex = 36
         '
-        'Venc_vtvLabel
-        '
-        Venc_vtvLabel.AutoSize = True
-        Venc_vtvLabel.Location = New System.Drawing.Point(26, 266)
-        Venc_vtvLabel.Name = "Venc_vtvLabel"
-        Venc_vtvLabel.Size = New System.Drawing.Size(52, 13)
-        Venc_vtvLabel.TabIndex = 37
-        Venc_vtvLabel.Text = "venc vtv:"
-        '
         'Venc_vtvDateTimePicker
         '
         Me.Venc_vtvDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.VehiculoBindingSource, "venc_vtv", True))
-        Me.Venc_vtvDateTimePicker.Location = New System.Drawing.Point(94, 262)
+        Me.Venc_vtvDateTimePicker.Location = New System.Drawing.Point(80, 240)
         Me.Venc_vtvDateTimePicker.Name = "Venc_vtvDateTimePicker"
         Me.Venc_vtvDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.Venc_vtvDateTimePicker.TabIndex = 38
@@ -306,7 +306,7 @@ Partial Class modificarVehiculo
         Me.VehiculoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VehiculoDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10})
         Me.VehiculoDataGridView.DataSource = Me.VehiculoBindingSource
-        Me.VehiculoDataGridView.Location = New System.Drawing.Point(317, 36)
+        Me.VehiculoDataGridView.Location = New System.Drawing.Point(303, 14)
         Me.VehiculoDataGridView.Name = "VehiculoDataGridView"
         Me.VehiculoDataGridView.Size = New System.Drawing.Size(1045, 220)
         Me.VehiculoDataGridView.TabIndex = 39
@@ -376,7 +376,7 @@ Partial Class modificarVehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1362, 465)
+        Me.ClientSize = New System.Drawing.Size(1362, 357)
         Me.Controls.Add(Me.VehiculoDataGridView)
         Me.Controls.Add(IdVehiculoLabel)
         Me.Controls.Add(Me.IdVehiculoTextBox)

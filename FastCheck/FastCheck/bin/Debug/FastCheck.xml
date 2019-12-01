@@ -38,6 +38,14 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:FastCheck.remiseriaDataSet.enCursoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.reservaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:FastCheck.remiseriaDataSet.choferRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -70,6 +78,14 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:FastCheck.remiseriaDataSet.enCursoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.reservaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:FastCheck.remiseriaDataSet.choferRowChangeEvent">
 	<summary>
 Row event argument class
@@ -99,6 +115,14 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:FastCheck.remiseriaDataSet.viajesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.enCursoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSet.reservaRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -135,6 +159,14 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:FastCheck.remiseriaDataSetTableAdapters.viajesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.enCursoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FastCheck.remiseriaDataSetTableAdapters.reservaTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
