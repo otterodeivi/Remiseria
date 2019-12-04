@@ -28,29 +28,41 @@ Partial Class nuevoTurno
         Dim IngresoLabel As System.Windows.Forms.Label
         Dim EgresoLabel As System.Windows.Forms.Label
         Dim TurnoLabel As System.Windows.Forms.Label
-        Me.RemiseriaDataSet = New FastCheck.remiseriaDataSet()
+        Dim NombreLabel As System.Windows.Forms.Label
+        Dim DominioLabel As System.Windows.Forms.Label
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TurnosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RemiseriaDataSet = New FastCheck.remiseriaDataSet()
         Me.TurnosTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.turnosTableAdapter()
         Me.TableAdapterManager = New FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager()
-        Me.IdChoferTextBox = New System.Windows.Forms.TextBox()
-        Me.IdVehiculoTextBox = New System.Windows.Forms.TextBox()
-        Me.IngresoDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.EgresoDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.TurnoTextBox = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.ChoferBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ChoferTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.choferTableAdapter()
+        Me.IdChoferComboBox = New System.Windows.Forms.ComboBox()
+        Me.NombreTextBox = New System.Windows.Forms.TextBox()
+        Me.VehiculoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VehiculoTableAdapter = New FastCheck.remiseriaDataSetTableAdapters.vehiculoTableAdapter()
+        Me.IdVehiculoComboBox = New System.Windows.Forms.ComboBox()
+        Me.DominioTextBox = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         IdChoferLabel = New System.Windows.Forms.Label()
         IdVehiculoLabel = New System.Windows.Forms.Label()
         IngresoLabel = New System.Windows.Forms.Label()
         EgresoLabel = New System.Windows.Forms.Label()
         TurnoLabel = New System.Windows.Forms.Label()
-        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        NombreLabel = New System.Windows.Forms.Label()
+        DominioLabel = New System.Windows.Forms.Label()
         CType(Me.TurnosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChoferBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VehiculoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'IdChoferLabel
         '
         IdChoferLabel.AutoSize = True
-        IdChoferLabel.Location = New System.Drawing.Point(12, 9)
+        IdChoferLabel.Location = New System.Drawing.Point(26, 23)
         IdChoferLabel.Name = "IdChoferLabel"
         IdChoferLabel.Size = New System.Drawing.Size(52, 13)
         IdChoferLabel.TabIndex = 3
@@ -59,7 +71,7 @@ Partial Class nuevoTurno
         'IdVehiculoLabel
         '
         IdVehiculoLabel.AutoSize = True
-        IdVehiculoLabel.Location = New System.Drawing.Point(12, 35)
+        IdVehiculoLabel.Location = New System.Drawing.Point(26, 49)
         IdVehiculoLabel.Name = "IdVehiculoLabel"
         IdVehiculoLabel.Size = New System.Drawing.Size(62, 13)
         IdVehiculoLabel.TabIndex = 5
@@ -68,7 +80,7 @@ Partial Class nuevoTurno
         'IngresoLabel
         '
         IngresoLabel.AutoSize = True
-        IngresoLabel.Location = New System.Drawing.Point(12, 62)
+        IngresoLabel.Location = New System.Drawing.Point(26, 76)
         IngresoLabel.Name = "IngresoLabel"
         IngresoLabel.Size = New System.Drawing.Size(44, 13)
         IngresoLabel.TabIndex = 7
@@ -77,7 +89,7 @@ Partial Class nuevoTurno
         'EgresoLabel
         '
         EgresoLabel.AutoSize = True
-        EgresoLabel.Location = New System.Drawing.Point(12, 88)
+        EgresoLabel.Location = New System.Drawing.Point(26, 102)
         EgresoLabel.Name = "EgresoLabel"
         EgresoLabel.Size = New System.Drawing.Size(42, 13)
         EgresoLabel.TabIndex = 9
@@ -86,21 +98,30 @@ Partial Class nuevoTurno
         'TurnoLabel
         '
         TurnoLabel.AutoSize = True
-        TurnoLabel.Location = New System.Drawing.Point(12, 113)
+        TurnoLabel.Location = New System.Drawing.Point(26, 132)
         TurnoLabel.Name = "TurnoLabel"
         TurnoLabel.Size = New System.Drawing.Size(34, 13)
         TurnoLabel.TabIndex = 11
         TurnoLabel.Text = "turno:"
         '
-        'RemiseriaDataSet
+        'Button1
         '
-        Me.RemiseriaDataSet.DataSetName = "remiseriaDataSet"
-        Me.RemiseriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.Button1.Location = New System.Drawing.Point(134, 205)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(190, 63)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "INGRESO"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'TurnosBindingSource
         '
         Me.TurnosBindingSource.DataMember = "turnos"
         Me.TurnosBindingSource.DataSource = Me.RemiseriaDataSet
+        '
+        'RemiseriaDataSet
+        '
+        Me.RemiseriaDataSet.DataSetName = "remiseriaDataSet"
+        Me.RemiseriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TurnosTableAdapter
         '
@@ -119,75 +140,132 @@ Partial Class nuevoTurno
         Me.TableAdapterManager.vehiculoTableAdapter = Nothing
         Me.TableAdapterManager.viajesTableAdapter = Nothing
         '
-        'IdChoferTextBox
+        'DateTimePicker1
         '
-        Me.IdChoferTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TurnosBindingSource, "idChofer", True))
-        Me.IdChoferTextBox.Location = New System.Drawing.Point(80, 6)
-        Me.IdChoferTextBox.Name = "IdChoferTextBox"
-        Me.IdChoferTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.IdChoferTextBox.TabIndex = 4
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.DateTimePicker1.Location = New System.Drawing.Point(94, 76)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(85, 20)
+        Me.DateTimePicker1.TabIndex = 16
         '
-        'IdVehiculoTextBox
+        'DateTimePicker2
         '
-        Me.IdVehiculoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TurnosBindingSource, "idVehiculo", True))
-        Me.IdVehiculoTextBox.Location = New System.Drawing.Point(80, 32)
-        Me.IdVehiculoTextBox.Name = "IdVehiculoTextBox"
-        Me.IdVehiculoTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.IdVehiculoTextBox.TabIndex = 6
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.DateTimePicker2.Location = New System.Drawing.Point(94, 102)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(85, 20)
+        Me.DateTimePicker2.TabIndex = 17
         '
-        'IngresoDateTimePicker
+        'ChoferBindingSource
         '
-        Me.IngresoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.TurnosBindingSource, "ingreso", True))
-        Me.IngresoDateTimePicker.Location = New System.Drawing.Point(80, 58)
-        Me.IngresoDateTimePicker.Name = "IngresoDateTimePicker"
-        Me.IngresoDateTimePicker.Size = New System.Drawing.Size(200, 20)
-        Me.IngresoDateTimePicker.TabIndex = 8
+        Me.ChoferBindingSource.DataMember = "chofer"
+        Me.ChoferBindingSource.DataSource = Me.RemiseriaDataSet
         '
-        'EgresoDateTimePicker
+        'ChoferTableAdapter
         '
-        Me.EgresoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.TurnosBindingSource, "egreso", True))
-        Me.EgresoDateTimePicker.Location = New System.Drawing.Point(80, 84)
-        Me.EgresoDateTimePicker.Name = "EgresoDateTimePicker"
-        Me.EgresoDateTimePicker.Size = New System.Drawing.Size(200, 20)
-        Me.EgresoDateTimePicker.TabIndex = 10
+        Me.ChoferTableAdapter.ClearBeforeFill = True
         '
-        'TurnoTextBox
+        'IdChoferComboBox
         '
-        Me.TurnoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TurnosBindingSource, "turno", True))
-        Me.TurnoTextBox.Location = New System.Drawing.Point(80, 110)
-        Me.TurnoTextBox.Name = "TurnoTextBox"
-        Me.TurnoTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.TurnoTextBox.TabIndex = 12
+        Me.IdChoferComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "idChofer", True))
+        Me.IdChoferComboBox.DataSource = Me.ChoferBindingSource
+        Me.IdChoferComboBox.DisplayMember = "idChofer"
+        Me.IdChoferComboBox.FormattingEnabled = True
+        Me.IdChoferComboBox.Location = New System.Drawing.Point(94, 20)
+        Me.IdChoferComboBox.Name = "IdChoferComboBox"
+        Me.IdChoferComboBox.Size = New System.Drawing.Size(85, 21)
+        Me.IdChoferComboBox.TabIndex = 18
+        Me.IdChoferComboBox.ValueMember = "idChofer"
         '
-        'Button1
+        'NombreLabel
         '
-        Me.Button1.Location = New System.Drawing.Point(80, 152)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(77, 24)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "INGRESO"
-        Me.Button1.UseVisualStyleBackColor = True
+        NombreLabel.AutoSize = True
+        NombreLabel.Location = New System.Drawing.Point(220, 22)
+        NombreLabel.Name = "NombreLabel"
+        NombreLabel.Size = New System.Drawing.Size(45, 13)
+        NombreLabel.TabIndex = 18
+        NombreLabel.Text = "nombre:"
+        '
+        'NombreTextBox
+        '
+        Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ChoferBindingSource, "nombre", True))
+        Me.NombreTextBox.Location = New System.Drawing.Point(271, 19)
+        Me.NombreTextBox.Name = "NombreTextBox"
+        Me.NombreTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.NombreTextBox.TabIndex = 19
+        '
+        'VehiculoBindingSource
+        '
+        Me.VehiculoBindingSource.DataMember = "vehiculo"
+        Me.VehiculoBindingSource.DataSource = Me.RemiseriaDataSet
+        '
+        'VehiculoTableAdapter
+        '
+        Me.VehiculoTableAdapter.ClearBeforeFill = True
+        '
+        'IdVehiculoComboBox
+        '
+        Me.IdVehiculoComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "idVehiculo", True))
+        Me.IdVehiculoComboBox.DataSource = Me.VehiculoBindingSource
+        Me.IdVehiculoComboBox.DisplayMember = "idVehiculo"
+        Me.IdVehiculoComboBox.FormattingEnabled = True
+        Me.IdVehiculoComboBox.Location = New System.Drawing.Point(94, 49)
+        Me.IdVehiculoComboBox.Name = "IdVehiculoComboBox"
+        Me.IdVehiculoComboBox.Size = New System.Drawing.Size(85, 21)
+        Me.IdVehiculoComboBox.TabIndex = 20
+        Me.IdVehiculoComboBox.ValueMember = "idVehiculo"
+        '
+        'DominioLabel
+        '
+        DominioLabel.AutoSize = True
+        DominioLabel.Location = New System.Drawing.Point(219, 53)
+        DominioLabel.Name = "DominioLabel"
+        DominioLabel.Size = New System.Drawing.Size(46, 13)
+        DominioLabel.TabIndex = 20
+        DominioLabel.Text = "dominio:"
+        '
+        'DominioTextBox
+        '
+        Me.DominioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VehiculoBindingSource, "dominio", True))
+        Me.DominioTextBox.Location = New System.Drawing.Point(271, 50)
+        Me.DominioTextBox.Name = "DominioTextBox"
+        Me.DominioTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.DominioTextBox.TabIndex = 21
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(94, 132)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(85, 21)
+        Me.ComboBox1.TabIndex = 22
         '
         'nuevoTurno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(291, 187)
+        Me.ClientSize = New System.Drawing.Size(483, 351)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(DominioLabel)
+        Me.Controls.Add(Me.DominioTextBox)
+        Me.Controls.Add(Me.IdVehiculoComboBox)
+        Me.Controls.Add(NombreLabel)
+        Me.Controls.Add(Me.NombreTextBox)
+        Me.Controls.Add(Me.IdChoferComboBox)
+        Me.Controls.Add(Me.DateTimePicker2)
+        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(IdChoferLabel)
-        Me.Controls.Add(Me.IdChoferTextBox)
         Me.Controls.Add(IdVehiculoLabel)
-        Me.Controls.Add(Me.IdVehiculoTextBox)
         Me.Controls.Add(IngresoLabel)
-        Me.Controls.Add(Me.IngresoDateTimePicker)
         Me.Controls.Add(EgresoLabel)
-        Me.Controls.Add(Me.EgresoDateTimePicker)
         Me.Controls.Add(TurnoLabel)
-        Me.Controls.Add(Me.TurnoTextBox)
         Me.Name = "nuevoTurno"
         Me.Text = "nuevoTurno"
-        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TurnosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RemiseriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChoferBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VehiculoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -196,10 +274,16 @@ Partial Class nuevoTurno
     Friend WithEvents TurnosBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents TurnosTableAdapter As FastCheck.remiseriaDataSetTableAdapters.turnosTableAdapter
     Friend WithEvents TableAdapterManager As FastCheck.remiseriaDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents IdChoferTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents IdVehiculoTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents IngresoDateTimePicker As System.Windows.Forms.DateTimePicker
-    Friend WithEvents EgresoDateTimePicker As System.Windows.Forms.DateTimePicker
-    Friend WithEvents TurnoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents ChoferBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents ChoferTableAdapter As FastCheck.remiseriaDataSetTableAdapters.choferTableAdapter
+    Friend WithEvents IdChoferComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents NombreTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents VehiculoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents VehiculoTableAdapter As FastCheck.remiseriaDataSetTableAdapters.vehiculoTableAdapter
+    Friend WithEvents IdVehiculoComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents DominioTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
 End Class

@@ -120,6 +120,18 @@
     <Compile Include="Alta\nuevoTurno.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Baja\eliminarChofer.Designer.vb">
+      <DependentUpon>eliminarChofer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Baja\eliminarChofer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Baja\eliminarVehiculo.Designer.vb">
+      <DependentUpon>eliminarVehiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Baja\eliminarVehiculo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="conexion.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -149,6 +161,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PanelControl\ChoferPanel.Designer.vb">
+      <DependentUpon>ChoferPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelControl\ChoferPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelControl\SocioPanel.Designer.vb">
+      <DependentUpon>SocioPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelControl\SocioPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelControl\vehiculoPanel.Designer.vb">
+      <DependentUpon>vehiculoPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelControl\vehiculoPanel.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="remiseriaDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -196,6 +226,12 @@
     <EmbeddedResource Include="Alta\nuevoTurno.resx">
       <DependentUpon>nuevoTurno.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Baja\eliminarChofer.resx">
+      <DependentUpon>eliminarChofer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Baja\eliminarVehiculo.resx">
+      <DependentUpon>eliminarVehiculo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +243,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelControl\ChoferPanel.resx">
+      <DependentUpon>ChoferPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelControl\vehiculoPanel.resx">
+      <DependentUpon>vehiculoPanel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viajes\finalizarViaje.resx">
       <DependentUpon>finalizarViaje.vb</DependentUpon>
@@ -238,6 +280,7 @@
       <DependentUpon>remiseriaDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

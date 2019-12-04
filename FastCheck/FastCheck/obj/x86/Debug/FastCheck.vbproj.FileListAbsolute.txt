@@ -5,7 +5,6 @@ C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\bin\Debug\FastC
 C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.altaSocio.resources
 C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.altaVehiculo.resources
 C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.altaChofer.resources
-C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.modificarChofer.resources
 C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.modificarSocio.resources
 C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.modificarVehiculo.resources
 C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.Form1.resources
@@ -38,3 +37,6 @@ C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\F
 C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.finalizarViaje.resources
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.activosEnTurno.resources
 C:\Users\ott\Desktop\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.nuevoTurno.resources
+C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.activosEnTurno.resources
+C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.nuevoTurno.resources
+C:\Users\thoma\Documents\GitKraken\Remiseria\FastCheck\FastCheck\obj\x86\Debug\FastCheck.modificarChofer2.resources

@@ -258,7 +258,7 @@ Partial Class altaChofer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(990, 245)
+        Me.ClientSize = New System.Drawing.Size(1008, 259)
         Me.Controls.Add(Me.ChoferDataGridView)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)

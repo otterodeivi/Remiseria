@@ -53,6 +53,6 @@ Public Class altaChofer
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
-        modificarChofer.Show()
+        modificarChofer2.Show()
     End Sub
 End Class

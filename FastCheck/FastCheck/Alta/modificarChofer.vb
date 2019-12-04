@@ -1,4 +1,4 @@
-﻿Public Class modificarChofer
+﻿Public Class modificarChofer2
 
     Private Sub ChoferBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Validate()
